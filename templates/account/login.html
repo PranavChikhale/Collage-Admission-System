@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admission - Login</title>
+</head>
+<body>
+    <h1>College Admission System</h1>
+    <h2>Login</h2>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" required>
+
+        <br><br>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <br><br>
+
+        <button type="submit">
+            Login
+        </button>
+
+        <p> Don't have an account?
+            <a href="{% url 'register' %}">
+                Create Account
+            </a>
+        </p>
+        <p>
+            GO to Home Page...!
+            <a href="{% url 'home' %}">
+                Home
+            </a>
+        </p>
+
+    </form>
+
+</body>
+</html>
