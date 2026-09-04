@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Course
 
-# Create your views here.
+def CourseList(request):
+    courses = Course.objects.filter(is_active=True)
+
+    return render(request, 'course/course_list.html', {'courses': courses})

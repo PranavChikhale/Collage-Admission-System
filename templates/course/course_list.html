@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Available Courses</title>
+
+</head>
+
+<body>
+
+    <h1>Available Courses</h1>
+
+    {% if courses %}
+
+        {% for course in courses %}
+
+            <div>
+
+                <h2>
+                    {{ course.course_name }}
+                </h2>
+
+                <p>
+                    Course Code:
+                    {{ course.course_code }}
+                </p>
+
+                <p>
+                    Department:
+                    {{ course.department }}
+                </p>
+
+                <p>
+                    Duration:
+                    {{ course.duration }} Years
+                </p>
+
+                <p>
+                    Available Seats:
+                    {{ course.available_seats }}
+                </p>
+
+            </div>
+
+            <hr>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>
+            No courses are currently available.
+        </p>
+
+    {% endif %}
+
+    <a href="{% url 'home' %}">
+        Back to Home
+    </a>
+
+</body>
+
+</html>

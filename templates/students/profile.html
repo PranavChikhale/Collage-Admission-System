@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Profile</title>
+
+</head>
+
+<body>
+    <h2> Hello {{user.username}}</h2>
+
+    <h1>Complete Your Profile</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Save Profile
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="{% url 'student_dashboard' %}">
+        Back to Dashboard
+    </a>
+
+</body>
+
+</html>

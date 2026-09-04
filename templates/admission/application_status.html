@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Application Status</title>
+
+</head>
+
+<body>
+
+    <h1>Admission Application</h1>
+
+
+    <h2>
+        Application Number:
+        {{ application.application_number }}
+    </h2>
+
+
+    <p>
+        Student:
+        {{ application.student.get_full_name }}
+    </p>
+
+
+    <p>
+        Course:
+        {{ application.course.course_name }}
+    </p>
+
+
+    <p>
+        Application Date:
+        {{ application.application_date }}
+    </p>
+
+
+    <h3>
+        Status:
+        {{ application.status }}
+    </h3>
+
+
+    {% if academic %}
+
+        <h2>Academic Details</h2>
+
+        <p>
+            10th Percentage:
+            {{ academic.tenth_percentage }}%
+        </p>
+
+        <p>
+            12th Percentage:
+            {{ academic.twelfth_percentage }}%
+        </p>
+
+        <p>
+            Board:
+            {{ academic.board }}
+        </p>
+
+        <p>
+            Passing Year:
+            {{ academic.passing_year }}
+        </p>
+
+        <p>
+            Previous School:
+            {{ academic.previous_school }}
+        </p>
+
+    {% endif %}
+
+
+    <br>
+
+    <a href="{% url 'student_dashboard' %}">
+        Back to Dashboard
+    </a>
+
+</body>
+
+</html>

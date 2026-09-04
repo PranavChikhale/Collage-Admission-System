@@ -72,12 +72,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'college_admission',
         'USER': 'root',
-        'PASSWORD': '**************',
+        'PASSWORD': '9920',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
