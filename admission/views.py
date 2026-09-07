@@ -3,47 +3,29 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils.crypto import get_random_string
 
-from .models import AdmissionApplication, AcademicDetails
-from .forms import AdmissionApplicationForm, AcademicDetailsForm
+from .models import AdmissionApplication, AcademicDetails, StudentDocuments
+from .forms import AdmissionApplicationForm, AcademicDetailsForm, StudentDocumentsForm
 
 
 @login_required
 def Admission_Form(request):
 
-    # Check whether the student already has an application
-    existing_admission_application = AdmissionApplication.objects.filter(
-        student=request.user
-    ).first()
-
-    if existing_admission_application:
-
-        return redirect(
-            'application_status',
-            application_number=existing_admission_application.application_number
-        )
-
-    # POST request
     if request.method == 'POST':
 
         application_form = AdmissionApplicationForm(request.POST)
-
         academic_form = AcademicDetailsForm(request.POST)
 
         if application_form.is_valid() and academic_form.is_valid():
 
             course = application_form.cleaned_data['course']
 
-            # Check whether seats are available
             if course.available_seats <= 0:
-
                 messages.error(
                     request,
                     'Sorry..! No seats available for this course.'
                 )
-
                 return redirect('admission_form')
 
-            # Generate Application Number
             application_number = (
                 'APP-' +
                 get_random_string(
@@ -52,29 +34,17 @@ def Admission_Form(request):
                 )
             )
 
-            # Save Admission Application
-            application = application_form.save(
-                commit=False
-            )
-
+            application = application_form.save(commit=False)
             application.student = request.user
             application.application_number = application_number
             application.status = 'Pending'
-
             application.save()
 
-            # Save Academic Details
-            academic = academic_form.save(
-                commit=False
-            )
-
+            academic = academic_form.save(commit=False)
             academic.application = application
-
             academic.save()
 
-            # Reduce available seats
             course.available_seats -= 1
-
             course.save()
 
             messages.success(
@@ -87,14 +57,10 @@ def Admission_Form(request):
                 application_number=application.application_number
             )
 
-    # GET request
     else:
-
         application_form = AdmissionApplicationForm()
-
         academic_form = AcademicDetailsForm()
 
-    # Display admission form
     return render(
         request,
         'admission/admission_form.html',
@@ -123,5 +89,79 @@ def Admission_Status(request, application_number):
         {
             'application': application,
             'academic': academic,
+        }
+    )
+
+@login_required
+def documents_upload(request):
+    application = AdmissionApplication.objects.filter(student=request.user).first()
+
+    if not application:
+        messages.error(request, "Please Submit Your Addmission Application  First....!")
+        return redirect('admission_form')
+    documents, created = StudentDocuments.objects.get_or_create( application=application)
+    if request.method == 'POST':
+        form = StudentDocumentsForm(request.POST, request.FILES, instance=documents)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request,
+                "Document Submitted Successfully...!!!"
+            )
+            return redirect('application_status', application_number=application.application_number)
+    else:
+        form = StudentDocumentsForm(instance=documents)
+        return render(request,'admission/documents_upload.html',{'form':form,'application':application})
+
+@login_required
+def admin_applications(request):
+    if not (
+        request.user.is_superuser
+        or hasattr(request.user, 'userprofile')
+        and request.user.userprofile.role == 'admin'
+    ):
+        return redirect('home')
+
+    applications = AdmissionApplication.objects.all().select_related(
+        'student',
+        'course'
+    )
+
+    return render(
+        request,
+        'admission/admin_application.html',
+        {'applications': applications}
+    )
+
+@login_required
+def admin_application_detail(request, application_number):
+    if not (
+        request.user.is_superuser
+        or (
+            hasattr(request.user, 'userprofile')
+            and request.user.userprofile.role == 'admin'
+        )
+    ):
+        return redirect('home')
+
+    application = AdmissionApplication.objects.get(
+        application_number=application_number
+    )
+
+    academic = AcademicDetails.objects.filter(
+        application=application
+    ).first()
+
+    documents = StudentDocuments.objects.filter(
+        application=application
+    ).first()
+
+    return render(
+        request,
+        'admission/admin_application_detail.html',
+        {
+            'application': application,
+            'academic': academic,
+            'documents': documents,
         }
     )

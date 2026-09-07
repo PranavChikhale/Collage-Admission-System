@@ -36,3 +36,17 @@ class AcademicDetails(models.Model):
     def __str__(self):
         return self.application.application_number
 
+class StudentDocuments(models.Model):
+    application = models.OneToOneField(AdmissionApplication, on_delete=models.CASCADE)
+
+    photo = models.ImageField(upload_to='documents/photos/')
+    signature = models.ImageField(upload_to='documents/signature/')
+    tenth_marksheet = models.ImageField(upload_to='documents/tenth_marksheet/')
+    twelfth_marksheet = models.ImageField(upload_to='documents/twelth_marksheet/')
+    leaving_certificate = models.ImageField(upload_to='documents/leaving_certificate/')
+    caste_certificate = models.ImageField(upload_to='documents/caste_certificate/',blank=True,null=True)
+
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Documents - {self.application.application_number}"

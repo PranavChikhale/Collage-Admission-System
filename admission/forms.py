@@ -1,5 +1,5 @@
 from django import forms
-from .models import AdmissionApplication, AcademicDetails
+from .models import AdmissionApplication, AcademicDetails, StudentDocuments
 from course.models import Course
 
 
@@ -20,5 +20,12 @@ class AcademicDetailsForm(forms.ModelForm):
         model = AcademicDetails
         fields = [
             'tenth_percentage', 'tenth_board', 'tenth_collage', 'tenth_passing_year',
-            'twelfth_percentage', 'twelfth_board', 'twelfth_collage',
+            'twelfth_percentage', 'twelfth_board', 'twelfth_collage','twelfth_passing_year',
+        ]
+
+class StudentDocumentsForm(forms.ModelForm):
+    class Meta:
+        model = StudentDocuments
+        fields = [
+            'photo', 'signature', 'tenth_marksheet', 'twelfth_marksheet', 'leaving_certificate', 'caste_certificate',
         ]

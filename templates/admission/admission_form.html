@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-    <title>College Admission Form</title>
-
+    <title>Admission Application</title>
 </head>
-
 <body>
 
-    <h1>College Admission Form</h1>
-
-    {% if messages %}
-
-        {% for message in messages %}
-
-            <p>{{ message }}</p>
-
-        {% endfor %}
-
-    {% endif %}
-
+    <h2>College Admission Application</h2>
 
     <form method="POST">
-
         {% csrf_token %}
 
-        <h2>Course Selection</h2>
+        <h3>Course Selection</h3>
 
         {{ application_form.as_p }}
 
+        <hr>
 
-        <h2>Academic Details</h2>
+        <h3>Academic Details</h3>
 
         {{ academic_form.as_p }}
 
+        <br>
 
         <button type="submit">
             Submit Application
@@ -42,13 +28,5 @@
 
     </form>
 
-
-    <br>
-
-    <a href="{% url 'student_dashboard' %}">
-        Back to Dashboard
-    </a>
-
 </body>
-
 </html>

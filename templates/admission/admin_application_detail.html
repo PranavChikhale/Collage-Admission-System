@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Details</title>
+</head>
+<body>
+
+<h2>Application Details</h2>
+
+<h3>Application Information</h3>
+
+<p>
+    Application Number:
+    <strong>{{ application.application_number }}</strong>
+</p>
+
+<p>Student: {{ application.student.username }}</p>
+
+<p>Course: {{ application.course.course_name }}</p>
+
+<p>Department: {{ application.course.department }}</p>
+
+<p>Status: {{ application.status }}</p>
+
+<hr>
+
+<h3>Academic Details</h3>
+
+{% if academic %}
+<p>10th Percentage: {{ academic.tenth_percentage }}</p>
+<p>12th Percentage: {{ academic.twelfth_percentage }}</p>
+<p>Board: {{ academic.board }}</p>
+<p>Passing Year: {{ academic.passing_year }}</p>
+<p>Previous School: {{ academic.previous_school }}</p>
+{% else %}
+<p>Academic details not available.</p>
+{% endif %}
+
+<hr>
+
+<h3>Uploaded Documents</h3>
+
+{% if documents %}
+
+<p>
+    Photo:
+    <a href="{{ documents.photo.url }}" target="_blank">View</a>
+</p>
+
+<p>
+    Signature:
+    <a href="{{ documents.signature.url }}" target="_blank">View</a>
+</p>
+
+<p>
+    10th Marksheet:
+    <a href="{{ documents.tenth_marksheet.url }}" target="_blank">View</a>
+</p>
+
+<p>
+    12th Marksheet:
+    <a href="{{ documents.twelfth_marksheet.url }}" target="_blank">View</a>
+</p>
+
+<p>
+    Leaving Certificate:
+    <a href="{{ documents.leaving_certificate.url }}" target="_blank">View</a>
+</p>
+
+{% if documents.caste_certificate %}
+<p>
+    Caste Certificate:
+    <a href="{{ documents.caste_certificate.url }}" target="_blank">
+        View
+    </a>
+</p>
+{% endif %}
+
+{% else %}
+
+<p>No documents uploaded.</p>
+
+{% endif %}
+
+<br>
+
+<a href="{% url 'admin_applications' %}">
+    Back to Applications
+</a>
+
+</body>
+</html>

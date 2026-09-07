@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Upload</title>
+</head>
+<body>
+
+<h2>Upload Documents</h2>
+
+<p>
+    Application Number:
+    <strong>{{ application.application_number }}</strong>
+</p>
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Upload Documents</button>
+
+</form>
+
+</body>
+</html>

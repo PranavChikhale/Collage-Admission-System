@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Applications</title>
+</head>
+<body>
+
+<h2>All Admission Applications</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Application Number</th>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+
+    {% for application in applications %}
+    <tr>
+        <td>{{ application.application_number }}</td>
+        <td>{{ application.student.username }}</td>
+        <td>{{ application.course.course_name }}</td>
+        <td>{{ application.application_date }}</td>
+        <td>{{ application.status }}</td>
+        <td>
+            <a href="{% url 'admin_application_detail' application.application_number %}">
+                View Details
+            </a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No applications found.</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
