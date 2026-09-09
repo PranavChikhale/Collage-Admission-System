@@ -1,0 +1,1402 @@
+/* =========================================================
+   AUTH CSS
+   LOGIN + REGISTER
+   ========================================================= */
+
+
+/* =========================================================
+   AUTH SECTION
+   ========================================================= */
+
+.auth-section {
+    min-height: 72vh;
+    padding: 45px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff7f0;
+}
+
+
+/* =========================================================
+   MAIN LOGIN / REGISTER CARD
+   ========================================================= */
+
+.auth-container {
+    width: 100%;
+    max-width: 850px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   LEFT IMAGE
+   ========================================================= */
+
+.auth-image {
+    position: relative;
+
+    min-height: 480px;
+
+    overflow: hidden;
+}
+
+.auth-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.auth-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(35, 35, 35, 0.88),
+        rgba(35, 35, 35, 0.08)
+    );
+}
+
+
+/* =========================================================
+   LEFT IMAGE TEXT
+   ========================================================= */
+
+.auth-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    color: #ffffff;
+
+    z-index: 2;
+}
+
+.auth-image-overlay h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 31px;
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+.auth-image-overlay p {
+    max-width: 320px;
+
+    color: #eeeeee;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   LEFT POINTS
+   ========================================================= */
+
+.auth-points {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.auth-points span {
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RIGHT FORM
+   ========================================================= */
+
+.auth-form {
+    position: relative;
+
+    padding: 38px 45px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* Orange top line */
+
+.auth-form::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #f36f21;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.auth-logo {
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 10px;
+}
+
+.auth-logo img {
+    width: 62px;
+    height: 62px;
+
+    object-fit: contain;
+
+    padding: 4px;
+
+    background: #fff7f0;
+
+    border: 1px solid #f0d2bd;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.auth-form h1 {
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+
+    color: #292929;
+
+    margin-bottom: 3px;
+}
+
+.auth-form h1::after {
+    content: "";
+
+    display: block;
+
+    width: 32px;
+    height: 2px;
+
+    background: #f36f21;
+
+    margin: 7px auto 0;
+
+    border-radius: 5px;
+}
+
+.auth-subtitle {
+    text-align: center;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    margin: 7px 0 20px;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.auth-error {
+    padding: 9px 11px;
+
+    margin-bottom: 14px;
+
+    border-radius: 5px;
+
+    background: #fff1f1;
+
+    border: 1px solid #efc6c6;
+
+    color: #c62828;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   NORMAL FORM FIELDS
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+
+    color: #333333;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+
+    height: 40px;
+
+    padding: 0 11px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #dcdcdc;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    font-size: 12px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.form-group input:hover {
+    border-color: #f0b48c;
+}
+
+.form-group input:focus {
+    border-color: #f36f21;
+
+    box-shadow:
+        0 0 0 2px rgba(243, 111, 33, 0.09);
+}
+
+.form-group input::placeholder {
+    color: #aaaaaa;
+}
+
+
+/* =========================================================
+   CAPTCHA SECTION
+   ========================================================= */
+
+.captcha-container {
+    width: 100%;
+
+    margin-top: 2px;
+
+    margin-bottom: 18px;
+}
+
+.captcha-container > label {
+    display: block;
+
+    color: #333333;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   CAPTCHA IMAGE
+   ========================================================= */
+
+/*
+   django-simple-captcha creates the image
+   as an element with class="captcha".
+*/
+
+.captcha-container img.captcha {
+    display: inline-block !important;
+
+    width: 115px !important;
+
+    height: 40px !important;
+
+    max-width: 115px !important;
+
+    min-width: 115px !important;
+
+    padding: 2px !important;
+
+    box-sizing: border-box !important;
+
+    object-fit: contain !important;
+
+    vertical-align: middle;
+
+    border: 1px solid #dddddd !important;
+
+    border-radius: 4px !important;
+
+    background: #ffffff !important;
+
+    margin-right: 8px;
+}
+
+
+/* =========================================================
+   CAPTCHA ANSWER INPUT
+   ========================================================= */
+
+/*
+   THIS IS THE IMPORTANT FIX.
+
+   The actual CAPTCHA answer field is:
+   input.captcha
+*/
+
+.captcha-container input.captcha {
+    display: inline-block !important;
+
+    width: 150px !important;
+
+    height: 40px !important;
+
+    max-width: 150px !important;
+
+    min-width: 150px !important;
+
+    padding: 0 10px !important;
+
+    box-sizing: border-box !important;
+
+    vertical-align: middle;
+
+    border: 1px solid #dcdcdc !important;
+
+    border-radius: 5px !important;
+
+    background: #ffffff !important;
+
+    color: #333333 !important;
+
+    font-family: "DM Sans", Arial, sans-serif !important;
+
+    font-size: 12px !important;
+
+    outline: none !important;
+
+    transition: 0.2s ease;
+}
+
+
+/* CAPTCHA INPUT FOCUS */
+
+.captcha-container input.captcha:focus {
+    border-color: #f36f21 !important;
+
+    box-shadow:
+        0 0 0 2px rgba(243, 111, 33, 0.09) !important;
+}
+
+
+/* =========================================================
+   HIDDEN CAPTCHA FIELD
+   ========================================================= */
+
+.captcha-container input[type="hidden"] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   CAPTCHA REFRESH
+   ========================================================= */
+
+.captcha-container a {
+    display: inline-block;
+
+    margin-left: 5px;
+
+    color: #f36f21;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    vertical-align: middle;
+}
+
+.captcha-container a:hover {
+    color: #d9570e;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   CAPTCHA ERROR
+   ========================================================= */
+
+.captcha-container .errorlist {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 5px 0 0;
+
+    color: #d93025;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.auth-button {
+    display: block;
+
+    width: 145px;
+
+    height: 40px;
+
+    margin: 2px auto 0;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.auth-button:hover {
+    background: #d9570e;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(217, 87, 14, 0.20);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   REGISTER LINK
+   ========================================================= */
+
+.auth-register {
+    text-align: center;
+
+    margin-top: 16px;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+.auth-register a {
+    color: #f36f21;
+
+    font-weight: 700;
+
+    margin-left: 3px;
+
+    text-decoration: none;
+}
+
+.auth-register a:hover {
+    color: #d9570e;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   REGISTER PAGE
+   ========================================================= */
+
+.register-container {
+    max-width: 850px;
+}
+
+.register-form {
+    padding: 38px 45px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .auth-section {
+        padding: 30px 15px;
+    }
+
+    .auth-container {
+        max-width: 500px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .auth-image {
+        min-height: 270px;
+
+        height: 270px;
+    }
+
+    .auth-image-overlay {
+        padding: 25px;
+    }
+
+    .auth-image-overlay h2 {
+        font-size: 28px;
+    }
+
+    .auth-form {
+        padding: 35px 30px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .auth-section {
+        padding: 20px 10px;
+    }
+
+    .auth-image {
+        min-height: 230px;
+
+        height: 230px;
+    }
+
+    .auth-image-overlay {
+        padding: 22px;
+    }
+
+    .auth-image-overlay h2 {
+        font-size: 25px;
+    }
+
+    .auth-image-overlay p {
+        font-size: 12px;
+    }
+
+    .auth-form {
+        padding: 30px 20px;
+    }
+
+    .auth-form h1 {
+        font-size: 25px;
+    }
+
+
+    /* CAPTCHA on mobile */
+
+    .captcha-container img.captcha {
+        width: 105px !important;
+
+        max-width: 105px !important;
+
+        min-width: 105px !important;
+    }
+
+    .captcha-container input.captcha {
+        width: 130px !important;
+
+        max-width: 130px !important;
+
+        min-width: 130px !important;
+    }
+
+
+    /* Login button */
+
+    .auth-button {
+        width: 140px;
+
+        height: 40px;
+    }
+}
+/* =========================================================
+   FINAL AUTH FIX
+   Overrides style.css
+   ========================================================= */
+
+/* LOGIN BUTTON */
+
+.auth-form form .auth-button {
+    display: block !important;
+
+    width: 145px !important;
+    max-width: 145px !important;
+    min-width: 145px !important;
+
+    height: 40px !important;
+
+    margin: 8px auto 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    border: none !important;
+    border-radius: 5px !important;
+
+    background: #f36f21 !important;
+
+    color: #ffffff !important;
+
+    font-family: "DM Sans", Arial, sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+}
+
+
+/* BUTTON HOVER */
+
+.auth-form form .auth-button:hover {
+    background: #d9570e !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CAPTCHA IMAGE
+   ========================================================= */
+
+.auth-form .captcha-container img.captcha {
+    display: inline-block !important;
+
+    width: 115px !important;
+    min-width: 115px !important;
+    max-width: 115px !important;
+
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+
+    padding: 2px !important;
+
+    box-sizing: border-box !important;
+
+    object-fit: contain !important;
+
+    vertical-align: middle !important;
+
+    border: 1px solid #d8d8d8 !important;
+
+    border-radius: 4px !important;
+
+    background: #ffffff !important;
+}
+
+
+/* =========================================================
+   CAPTCHA ANSWER BOX
+   ========================================================= */
+
+.auth-form .captcha-container input.captcha {
+    display: inline-block !important;
+
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+
+    padding: 0 10px !important;
+
+    margin: 0 0 0 5px !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid #d8d8d8 !important;
+
+    border-radius: 5px !important;
+
+    background: #ffffff !important;
+
+    color: #333333 !important;
+
+    font-family: "DM Sans", Arial, sans-serif !important;
+
+    font-size: 12px !important;
+
+    outline: none !important;
+}
+
+
+/* CAPTCHA INPUT FOCUS */
+
+.auth-form .captcha-container input.captcha:focus {
+    border-color: #f36f21 !important;
+
+    box-shadow:
+        0 0 0 2px rgba(243, 111, 33, 0.10) !important;
+}
+
+
+/* HIDDEN CAPTCHA FIELD */
+
+.auth-form .captcha-container input[type="hidden"] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   CAPTCHA REFRESH LINK
+   ========================================================= */
+
+.auth-form .captcha-container a {
+    display: inline-block !important;
+
+    width: auto !important;
+
+    margin-left: 6px !important;
+
+    color: #f36f21 !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600 !important;
+
+    text-decoration: none !important;
+
+    vertical-align: middle !important;
+}
+
+
+/* =========================================================
+   FORM WIDTH
+   ========================================================= */
+
+.auth-form form {
+    width: 100% !important;
+
+    max-width: 100% !important;
+}
+
+
+/* =========================================================
+   PREVENT GLOBAL INPUT CSS
+   ========================================================= */
+
+.auth-form form .captcha-container input.captcha {
+    flex: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .auth-form form .auth-button {
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+    }
+
+    .auth-form .captcha-container img.captcha {
+        width: 105px !important;
+        min-width: 105px !important;
+        max-width: 105px !important;
+    }
+
+    .auth-form .captcha-container input.captcha {
+        width: 135px !important;
+        min-width: 135px !important;
+        max-width: 135px !important;
+    }
+}
+
+/* =========================================
+   AUTH PAGES — SMOOTH ANIMATIONS
+   Login + Register
+   ========================================= */
+
+
+/* =========================================
+   AUTH PAGE ENTRY
+   ========================================= */
+
+.auth-container,
+.auth-section,
+.auth-wrapper {
+    animation: authPageIn 0.7s ease-out both;
+}
+
+@keyframes authPageIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   AUTH CARD
+   ========================================= */
+
+.auth-card,
+.login-card,
+.register-card {
+    animation: authCardIn 0.7s ease-out both;
+}
+
+@keyframes authCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   AUTH HEADER
+   ========================================= */
+
+.auth-header {
+    animation: authHeaderIn 0.6s ease-out 0.15s both;
+}
+
+@keyframes authHeaderIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   AUTH TITLE
+   ========================================= */
+
+.auth-card h1,
+.login-card h1,
+.register-card h1 {
+    animation: authTitleIn 0.6s ease-out 0.2s both;
+}
+
+@keyframes authTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   FORM GROUP ANIMATION
+   ========================================= */
+
+.auth-form .form-group,
+.auth-form p,
+.login-form .form-group,
+.register-form .form-group {
+    animation: formFieldIn 0.5s ease-out both;
+}
+
+
+/* Stagger form fields */
+
+.auth-form .form-group:nth-child(1),
+.login-form .form-group:nth-child(1),
+.register-form .form-group:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.auth-form .form-group:nth-child(2),
+.login-form .form-group:nth-child(2),
+.register-form .form-group:nth-child(2) {
+    animation-delay: 0.22s;
+}
+
+.auth-form .form-group:nth-child(3),
+.login-form .form-group:nth-child(3),
+.register-form .form-group:nth-child(3) {
+    animation-delay: 0.29s;
+}
+
+.auth-form .form-group:nth-child(4),
+.login-form .form-group:nth-child(4),
+.register-form .form-group:nth-child(4) {
+    animation-delay: 0.36s;
+}
+
+.auth-form .form-group:nth-child(5),
+.register-form .form-group:nth-child(5) {
+    animation-delay: 0.43s;
+}
+
+.auth-form .form-group:nth-child(6),
+.register-form .form-group:nth-child(6) {
+    animation-delay: 0.50s;
+}
+
+@keyframes formFieldIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   LABELS
+   ========================================= */
+
+.auth-form label,
+.login-form label,
+.register-form label {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================
+   INPUT FOCUS
+   ========================================= */
+
+.auth-form input,
+.auth-form select,
+.auth-form textarea,
+.login-form input,
+.register-form input,
+.register-form select {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease,
+        background 0.25s ease;
+}
+
+.auth-form input:focus,
+.auth-form select:focus,
+.auth-form textarea:focus,
+.login-form input:focus,
+.register-form input:focus,
+.register-form select:focus {
+    transform: translateY(-2px);
+
+    border-color: #f36f21;
+
+    box-shadow:
+        0 0 0 3px rgba(243, 111, 33, 0.12),
+        0 5px 15px rgba(60, 35, 20, 0.06);
+
+    outline: none;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+   ========================================= */
+
+.auth-form input::placeholder,
+.login-form input::placeholder,
+.register-form input::placeholder {
+    transition: opacity 0.25s ease;
+}
+
+.auth-form input:focus::placeholder,
+.login-form input:focus::placeholder,
+.register-form input:focus::placeholder {
+    opacity: 0.5;
+}
+
+
+/* =========================================
+   CAPTCHA
+   ========================================= */
+
+.captcha {
+    animation: captchaIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes captchaIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* CAPTCHA image */
+
+.captcha img {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.captcha img:hover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 5px 15px rgba(60, 35, 20, 0.12);
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+   ========================================= */
+
+.auth-form button[type="submit"],
+.login-form button[type="submit"],
+.register-form button[type="submit"],
+.auth-button,
+.login-button,
+.register-button {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.auth-form button[type="submit"]:hover,
+.login-form button[type="submit"]:hover,
+.register-form button[type="submit"]:hover,
+.auth-button:hover,
+.login-button:hover,
+.register-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(217, 87, 14, 0.22);
+}
+
+
+/* Button shine */
+
+.auth-form button[type="submit"]::after,
+.login-form button[type="submit"]::after,
+.register-form button[type="submit"]::after,
+.auth-button::after,
+.login-button::after,
+.register-button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.55s ease;
+}
+
+.auth-form button[type="submit"]:hover::after,
+.login-form button[type="submit"]:hover::after,
+.register-form button[type="submit"]:hover::after,
+.auth-button:hover::after,
+.login-button:hover::after,
+.register-button:hover::after {
+    left: 140%;
+}
+
+
+/* =========================================
+   AUTH LINKS
+   ========================================= */
+
+.auth-card a,
+.login-card a,
+.register-card a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.auth-card a:hover,
+.login-card a:hover,
+.register-card a:hover {
+    color: #d9570e;
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+   ========================================= */
+
+.error-message,
+.form-error,
+.error,
+.alert-danger {
+    animation: errorShake 0.5s ease-out both;
+}
+
+@keyframes errorShake {
+
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+   ========================================= */
+
+.success-message,
+.alert-success {
+    animation: successMessageIn 0.6s ease-out both;
+}
+
+@keyframes successMessageIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   AUTH SIDE IMAGE
+   ========================================= */
+
+.auth-image,
+.login-image,
+.register-image {
+    overflow: hidden;
+}
+
+.auth-image img,
+.login-image img,
+.register-image img {
+    transition:
+        transform 0.7s ease;
+}
+
+.auth-image:hover img,
+.login-image:hover img,
+.register-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   FLOATING DECORATION
+   ========================================= */
+
+.auth-decoration,
+.login-decoration,
+.register-decoration {
+    animation: authFloat 4s ease-in-out infinite;
+}
+
+@keyframes authFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .auth-card,
+    .login-card,
+    .register-card {
+        animation-duration: 0.6s;
+    }
+
+    .auth-form .form-group,
+    .login-form .form-group,
+    .register-form .form-group {
+        animation-duration: 0.45s;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .auth-container,
+    .auth-section,
+    .auth-wrapper,
+    .auth-card,
+    .login-card,
+    .register-card,
+    .auth-header,
+    .auth-card h1,
+    .login-card h1,
+    .register-card h1,
+    .auth-form .form-group,
+    .auth-form p,
+    .login-form .form-group,
+    .register-form .form-group,
+    .captcha,
+    .error-message,
+    .form-error,
+    .error,
+    .alert-danger,
+    .success-message,
+    .alert-success {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

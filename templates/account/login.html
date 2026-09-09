@@ -1,46 +1,155 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>College Admission - Login</title>
-</head>
-<body>
-    <h1>College Admission System</h1>
-    <h2>Login</h2>
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
+{% extends 'base.html' %}
+{% load static %}
 
-    <form method="POST">
-        {% csrf_token %}
-        <label>Username</label>
-        <input type="text" name="username" required>
+{% block title %}
+Login | College Admission Management System
+{% endblock %}
 
-        <br><br>
 
-        <label>Password</label>
-        <input type="password" name="password" required>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
 
-        <br><br>
-        {{ form.captcha }}
-        <br> <br>
+{% block content %}
 
-        <button type="submit">
-            Login
-        </button>
+<section class="auth-section">
 
-        <p> Don't have an account?
-            <a href="{% url 'register' %}">
-                Create Account
-            </a>
-        </p>
-        <p>
-            GO to Home Page...!
-            <a href="{% url 'home' %}">
-                Home
-            </a>
-        </p>
+    <div class="auth-container">
 
-    </form>
+        <!-- Left Image -->
+        <div class="auth-image">
 
-</body>
-</html>
+            <img src="{% static 'images/students.jpg' %}"
+                 alt="College Students">
+
+            <div class="auth-image-overlay">
+
+                <h2>Welcome Back!</h2>
+
+                <p>
+                    Continue your college admission journey
+                    with us.
+                </p>
+
+                <div class="auth-points">
+                    <span>✓ Secure Login</span>
+                    <span>✓ Easy Admission Process</span>
+                    <span>✓ Track Your Application</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Login -->
+        <div class="auth-form">
+
+            <!-- BIG LOGO -->
+            <div class="auth-logo">
+
+                <img src="{% static 'images/logo.png' %}"
+                     alt="College Logo">
+
+            </div>
+
+
+            <h1>Welcome Back</h1>
+
+            <p class="auth-subtitle">
+                Login to your account
+            </p>
+
+
+            {% if error %}
+                <div class="auth-error">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- Username -->
+
+                <div class="form-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- REAL CAPTCHA -->
+
+                <div class="captcha-container">
+
+                    <label>
+                        Security Verification
+                    </label>
+
+                    {{ form.captcha }}
+
+                </div>
+
+
+                <!-- Login -->
+
+                <button type="submit"
+                        class="auth-button">
+
+                    Login →
+
+                </button>
+
+            </form>
+
+
+            <div class="auth-register">
+
+                Don't have an account?
+
+                <a href="{% url 'register' %}">
+                    Register Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

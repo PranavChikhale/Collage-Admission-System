@@ -1,0 +1,1353 @@
+/* ==========================================
+   APPLICATION STATUS PAGE
+========================================== */
+
+.status-section {
+    background: #fff7f0;
+    padding: 55px 20px 80px;
+    min-height: 700px;
+}
+
+.status-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   STATUS IMAGE
+========================================== */
+
+.status-image-wrapper {
+    width: 100%;
+    height: 410px;
+
+    overflow: hidden;
+    border-radius: 18px;
+
+    margin-bottom: 30px;
+
+    background: #fff;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+.status-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   MAIN STATUS CARD
+========================================== */
+
+.status-card {
+    background: #ffffff;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 18px;
+
+    padding: 38px 40px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================
+   STATUS HEADING
+========================================== */
+
+.status-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding-bottom: 28px;
+
+    border-bottom: 1px solid #f1dfd0;
+}
+
+.status-tag {
+    display: inline-block;
+
+    color: #f36f21;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 9px;
+}
+
+.status-heading h1 {
+    margin: 0 0 8px;
+
+    color: #292929;
+
+    font-size: 28px;
+}
+
+.status-heading p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   STATUS BADGE
+========================================== */
+
+.status-badge {
+    flex-shrink: 0;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* Pending */
+
+.status-badge.pending {
+    background: #fff4dc;
+
+    color: #b87900;
+
+    border: 1px solid #f2d49b;
+}
+
+
+/* Approved */
+
+.status-badge.approved {
+    background: #eaf8ee;
+
+    color: #218838;
+
+    border: 1px solid #b8e0c2;
+}
+
+
+/* Rejected */
+
+.status-badge.rejected {
+    background: #fff0ed;
+
+    color: #d9570e;
+
+    border: 1px solid #f0c0b3;
+}
+
+
+/* ==========================================
+   APPLICATION SUMMARY
+========================================== */
+
+.application-summary {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 28px;
+}
+
+.summary-item {
+    background: #fffaf6;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 10px;
+
+    padding: 17px;
+}
+
+.summary-item span {
+    display: block;
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+
+    margin-bottom: 7px;
+}
+
+.summary-item strong {
+    display: block;
+
+    color: #292929;
+
+    font-size: 14px;
+
+    word-break: break-word;
+}
+
+
+/* ==========================================
+   STATUS MESSAGE
+========================================== */
+
+.status-message {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    border-radius: 12px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 22px;
+}
+
+
+/* Pending */
+
+.message-pending {
+    background: #fff9eb;
+
+    border: 1px solid #f2dfae;
+}
+
+
+/* Approved */
+
+.message-approved {
+    background: #effaf2;
+
+    border: 1px solid #c3e6cb;
+}
+
+
+/* Rejected */
+
+.message-rejected {
+    background: #fff2ef;
+
+    border: 1px solid #f0c6bc;
+}
+
+
+.message-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.status-message strong {
+    display: block;
+
+    color: #292929;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.status-message p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   DETAILS CARD
+========================================== */
+
+.details-card {
+    background: #ffffff;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 18px;
+
+    padding: 35px 40px;
+
+    margin-bottom: 22px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ==========================================
+   DETAILS HEADER
+========================================== */
+
+.details-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #f1dfd0;
+}
+
+.details-tag {
+    display: block;
+
+    color: #f36f21;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    margin-bottom: 6px;
+}
+
+.details-heading h2 {
+    margin: 0;
+
+    color: #292929;
+
+    font-size: 22px;
+}
+
+.details-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #fff1e6;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+/* ==========================================
+   EDUCATION BOX
+========================================== */
+
+.education-box {
+    background: #fffaf6;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 13px;
+
+    padding: 24px;
+
+    margin-bottom: 20px;
+}
+
+.education-box:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   EDUCATION TITLE
+========================================== */
+
+.education-title {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 17px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #f1dfd0;
+}
+
+.education-title span {
+    display: block;
+
+    color: #f36f21;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 4px;
+}
+
+.education-title h3 {
+    margin: 0;
+
+    color: #292929;
+
+    font-size: 17px;
+}
+
+.education-title > strong {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   EDUCATION DETAILS
+========================================== */
+
+.education-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.education-grid > div {
+    background: #ffffff;
+
+    border: 1px solid #eee1d7;
+
+    border-radius: 8px;
+
+    padding: 14px;
+}
+
+.education-grid span {
+    display: block;
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    margin-bottom: 6px;
+}
+
+.education-grid strong {
+    display: block;
+
+    color: #292929;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+
+/* ==========================================
+   DOCUMENT STATUS
+========================================== */
+
+.document-status-card {
+    background: #ffffff;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 18px;
+
+    padding: 28px 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+
+    margin-bottom: 25px;
+}
+
+.document-status-card h2 {
+    margin: 0 0 5px;
+
+    color: #292929;
+
+    font-size: 20px;
+}
+
+.document-status-card p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   DOCUMENT BUTTON
+========================================== */
+
+.document-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    border: 1px solid #f36f21;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #d9570e;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: all 0.25s ease;
+}
+
+.document-button:hover {
+    background: #fff3e8;
+
+    border-color: #d9570e;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 14px rgba(217, 87, 14, 0.10);
+}
+
+
+/* ==========================================
+   BACK TO DASHBOARD
+========================================== */
+
+.status-actions {
+    text-align: center;
+
+    padding-top: 5px;
+}
+
+.back-dashboard {
+    display: inline-block;
+
+    color: #666;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.back-dashboard:hover {
+    color: #f36f21;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .application-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .document-status-card {
+        align-items: flex-start;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .status-section {
+        padding: 30px 15px 55px;
+    }
+
+    .status-image-wrapper {
+        height: 250px;
+
+        border-radius: 14px;
+    }
+
+    .status-card {
+        padding: 25px 20px;
+
+        border-radius: 14px;
+    }
+
+    .status-heading {
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .status-heading h1 {
+        font-size: 23px;
+    }
+
+    .status-badge {
+        align-self: flex-start;
+    }
+
+    .application-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .details-card {
+        padding: 25px 20px;
+
+        border-radius: 14px;
+    }
+
+    .details-heading h2 {
+        font-size: 20px;
+    }
+
+    .education-box {
+        padding: 20px;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .document-status-card {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 25px 20px;
+
+        border-radius: 14px;
+    }
+
+    .document-button {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+/* =========================================
+   APPLICATION STATUS
+   SMOOTH PROFESSIONAL ANIMATIONS
+   ========================================= */
+
+
+/* =========================================
+   PAGE ENTRY
+   ========================================= */
+
+.status-section,
+.status-container,
+.status-page {
+    animation: statusPageIn 0.7s ease-out both;
+}
+
+@keyframes statusPageIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.status-header,
+.status-hero {
+    animation: statusHeaderIn 0.7s ease-out both;
+}
+
+@keyframes statusHeaderIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-header h1,
+.status-hero h1 {
+    animation: statusTitleIn 0.6s ease-out 0.15s both;
+}
+
+@keyframes statusTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-header p,
+.status-hero p {
+    animation: statusTextIn 0.6s ease-out 0.25s both;
+}
+
+@keyframes statusTextIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MAIN STATUS CARD
+   ========================================= */
+
+.status-card,
+.application-status-card,
+.status-main-card {
+    animation: statusCardIn 0.7s ease-out 0.15s both;
+}
+
+@keyframes statusCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   STATUS DISPLAY
+   ========================================= */
+
+.status-display,
+.status-box,
+.application-status {
+    animation: statusDisplayIn 0.65s ease-out 0.25s both;
+}
+
+@keyframes statusDisplayIn {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   STATUS ICON
+   ========================================= */
+
+.status-icon {
+    animation: statusIconIn 0.7s ease-out 0.3s both;
+}
+
+@keyframes statusIconIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   PENDING STATUS
+   ========================================= */
+
+.status-pending {
+    animation:
+        pendingAppear
+        0.6s
+        ease-out
+        0.35s
+        both;
+}
+
+@keyframes pendingAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   APPROVED STATUS
+   ========================================= */
+
+.status-approved {
+    animation:
+        approvedAppear
+        0.6s
+        ease-out
+        0.35s
+        both;
+}
+
+@keyframes approvedAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   REJECTED STATUS
+   ========================================= */
+
+.status-rejected {
+    animation:
+        rejectedAppear
+        0.6s
+        ease-out
+        0.35s
+        both;
+}
+
+@keyframes rejectedAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   STATUS BADGE
+   ========================================= */
+
+.status-badge {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.status-badge:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(60, 35, 20, 0.10);
+}
+
+
+/* =========================================
+   APPLICATION INFORMATION
+   ========================================= */
+
+.status-info,
+.application-info,
+.application-details {
+    opacity: 0;
+
+    animation:
+        statusInfoIn
+        0.6s
+        ease-out
+        0.35s
+        forwards;
+}
+
+@keyframes statusInfoIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   INFORMATION ITEMS
+   ========================================= */
+
+.status-info-item,
+.application-info-item,
+.detail-item {
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.status-info-item:hover,
+.application-info-item:hover,
+.detail-item:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 16px rgba(60, 35, 20, 0.07);
+}
+
+
+/* =========================================
+   ACADEMIC DETAILS
+   ========================================= */
+
+.academic-details,
+.academic-card {
+    animation: academicDetailsIn 0.65s ease-out 0.4s both;
+}
+
+@keyframes academicDetailsIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   DOCUMENT STATUS
+   ========================================= */
+
+.documents-status,
+.document-status,
+.documents-card {
+    animation: documentsStatusIn 0.65s ease-out 0.45s both;
+}
+
+@keyframes documentsStatusIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   DOCUMENT ITEMS
+   ========================================= */
+
+.document-status-item,
+.document-item {
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.document-status-item:hover,
+.document-item:hover {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   CHECK / SUCCESS ICON
+   ========================================= */
+
+.document-check,
+.success-icon,
+.check-icon {
+    transition:
+        transform 0.3s ease;
+}
+
+.document-status-item:hover .document-check,
+.document-status-item:hover .success-icon,
+.document-status-item:hover .check-icon {
+    transform: scale(1.12);
+}
+
+
+/* =========================================
+   STATUS TIMELINE
+   ========================================= */
+
+.status-timeline,
+.application-timeline {
+    animation: timelineIn 0.7s ease-out 0.4s both;
+}
+
+@keyframes timelineIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Timeline steps */
+
+.timeline-step {
+    opacity: 0;
+
+    animation:
+        timelineStepIn
+        0.5s
+        ease-out
+        forwards;
+}
+
+.timeline-step:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.timeline-step:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.timeline-step:nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+.timeline-step:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+@keyframes timelineStepIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Timeline icon */
+
+.timeline-icon {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.timeline-step:hover .timeline-icon {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 5px 15px rgba(243, 111, 33, 0.20);
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+   ========================================= */
+
+.status-actions,
+.application-actions {
+    animation: statusActionsIn 0.6s ease-out 0.5s both;
+}
+
+@keyframes statusActionsIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.status-actions a,
+.application-actions a {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.status-actions a:hover,
+.application-actions a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px rgba(60, 35, 20, 0.12);
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.status-back,
+.application-back {
+    animation: statusBackIn 0.6s ease-out 0.55s both;
+}
+
+@keyframes statusBackIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-back a,
+.application-back a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.status-back a:hover,
+.application-back a:hover {
+    color: #f36f21;
+
+    transform: translateX(-4px);
+}
+
+
+/* =========================================
+   MESSAGE / ALERT
+   ========================================= */
+
+.status-message,
+.status-alert,
+.alert {
+    animation: statusMessageIn 0.6s ease-out both;
+}
+
+@keyframes statusMessageIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .status-card,
+    .application-status-card,
+    .status-main-card {
+        animation-duration: 0.55s;
+    }
+
+    .status-info,
+    .application-info,
+    .application-details {
+        animation-duration: 0.5s;
+    }
+
+    .status-actions,
+    .application-actions {
+        animation-duration: 0.5s;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .status-section,
+    .status-container,
+    .status-page,
+    .status-header,
+    .status-hero,
+    .status-header h1,
+    .status-hero h1,
+    .status-header p,
+    .status-hero p,
+    .status-card,
+    .application-status-card,
+    .status-main-card,
+    .status-display,
+    .status-box,
+    .application-status,
+    .status-icon,
+    .status-pending,
+    .status-approved,
+    .status-rejected,
+    .status-info,
+    .application-info,
+    .application-details,
+    .academic-details,
+    .academic-card,
+    .documents-status,
+    .document-status,
+    .documents-card,
+    .status-timeline,
+    .application-timeline,
+    .timeline-step,
+    .status-actions,
+    .application-actions,
+    .status-back,
+    .application-back,
+    .status-message,
+    .status-alert,
+    .alert {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

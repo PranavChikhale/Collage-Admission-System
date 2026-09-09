@@ -1,85 +1,392 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
+{% block title %}
+Application Status | College Admission Management System
+{% endblock %}
 
-    <title>Application Status</title>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/status.css' %}">
+{% endblock %}
 
-</head>
+{% block content %}
 
-<body>
+<section class="status-section">
 
-    <h1>Admission Application</h1>
+    <div class="status-container">
 
+        <!-- ==============================
+             STATUS HEADER
+        =============================== -->
 
-    <h2>
-        Application Number:
-        {{ application.application_number }}
-    </h2>
+        <div class="status-image-wrapper">
 
+            <img src="{% static 'images/application_status.jpg' %}"
+                 alt="Application Status"
+                 class="status-image">
 
-    <p>
-        Student:
-        {{ application.student.get_full_name }}
-    </p>
-
-
-    <p>
-        Course:
-        {{ application.course.course_name }}
-    </p>
+        </div>
 
 
-    <p>
-        Application Date:
-        {{ application.application_date }}
-    </p>
+        <!-- ==============================
+             APPLICATION SUMMARY
+        =============================== -->
+
+        <div class="status-card">
+
+            <div class="status-heading">
+
+                <div>
+
+                    <span class="status-tag">
+                        APPLICATION STATUS
+                    </span>
+
+                    <h1>
+                        Your Admission Application
+                    </h1>
+
+                    <p>
+                        Track the progress of your college admission application.
+                    </p>
+
+                </div>
+
+                <div class="status-badge
+                    {% if application.status == 'Approved' %}
+                        approved
+                    {% elif application.status == 'Rejected' %}
+                        rejected
+                    {% else %}
+                        pending
+                    {% endif %}">
+
+                    {% if application.status == 'Approved' %}
+                        ✓ Approved
+                    {% elif application.status == 'Rejected' %}
+                        ✕ Rejected
+                    {% else %}
+                        ⏳ Pending
+                    {% endif %}
+
+                </div>
+
+            </div>
 
 
-    <h3>
-        Status:
-        {{ application.status }}
-    </h3>
+            <!-- Application Details -->
+
+            <div class="application-summary">
+
+                <div class="summary-item">
+
+                    <span>Application Number</span>
+
+                    <strong>
+                        {{ application.application_number }}
+                    </strong>
+
+                </div>
 
 
-    {% if academic %}
+                <div class="summary-item">
 
-        <h2>Academic Details</h2>
+                    <span>Course</span>
 
-        <p>
-            10th Percentage:
-            {{ academic.tenth_percentage }}%
-        </p>
+                    <strong>
+                        {{ application.course.course_name }}
+                    </strong>
 
-        <p>
-            12th Percentage:
-            {{ academic.twelfth_percentage }}%
-        </p>
-
-        <p>
-            Board:
-            {{ academic.board }}
-        </p>
-
-        <p>
-            Passing Year:
-            {{ academic.passing_year }}
-        </p>
-
-        <p>
-            Previous School:
-            {{ academic.previous_school }}
-        </p>
-
-    {% endif %}
+                </div>
 
 
-    <br>
+                <div class="summary-item">
 
-    <a href="{% url 'student_dashboard' %}">
-        Back to Dashboard
-    </a>
+                    <span>Course Code</span>
 
-</body>
+                    <strong>
+                        {{ application.course.course_code }}
+                    </strong>
 
-</html>
+                </div>
+
+
+                <div class="summary-item">
+
+                    <span>Application Date</span>
+
+                    <strong>
+                        {{ application.application_date|date:"d M Y" }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             STATUS MESSAGE
+        =============================== -->
+
+        <div class="status-message
+            {% if application.status == 'Approved' %}
+                message-approved
+            {% elif application.status == 'Rejected' %}
+                message-rejected
+            {% else %}
+                message-pending
+            {% endif %}">
+
+            {% if application.status == 'Approved' %}
+
+                <span class="message-icon">✓</span>
+
+                <div>
+                    <strong>Congratulations!</strong>
+
+                    <p>
+                        Your admission application has been approved.
+                        Please follow the instructions provided by the college.
+                    </p>
+                </div>
+
+            {% elif application.status == 'Rejected' %}
+
+                <span class="message-icon">!</span>
+
+                <div>
+                    <strong>Application Rejected</strong>
+
+                    <p>
+                        Your application has been rejected.
+                        Please contact the college administration for more information.
+                    </p>
+                </div>
+
+            {% else %}
+
+                <span class="message-icon">⏳</span>
+
+                <div>
+                    <strong>Application Under Review</strong>
+
+                    <p>
+                        Your application has been submitted successfully and
+                        is currently being reviewed by the administration.
+                    </p>
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- ==============================
+             ACADEMIC DETAILS
+        =============================== -->
+
+        {% if academic %}
+
+        <div class="details-card">
+
+            <div class="details-heading">
+
+                <div>
+                    <span class="details-tag">
+                        ACADEMIC INFORMATION
+                    </span>
+
+                    <h2>
+                        Academic Details
+                    </h2>
+                </div>
+
+                <span class="details-icon">
+                    🎓
+                </span>
+
+            </div>
+
+
+            <!-- 10th -->
+
+            <div class="education-box">
+
+                <div class="education-title">
+
+                    <div>
+                        <span>10th / SSC</span>
+
+                        <h3>
+                            Secondary School Details
+                        </h3>
+                    </div>
+
+                    <strong>10</strong>
+
+                </div>
+
+
+                <div class="education-grid">
+
+                    <div>
+                        <span>Percentage</span>
+
+                        <strong>
+                            {{ academic.tenth_percentage }}%
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>School / College</span>
+
+                        <strong>
+                            {{ academic.tenth_collage }}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Board</span>
+
+                        <strong>
+                            {{ academic.tenth_board }}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Passing Year</span>
+
+                        <strong>
+                            {{ academic.tenth_passing_year }}
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 12th -->
+
+            <div class="education-box">
+
+                <div class="education-title">
+
+                    <div>
+                        <span>12th / HSC</span>
+
+                        <h3>
+                            Higher Secondary Details
+                        </h3>
+                    </div>
+
+                    <strong>12</strong>
+
+                </div>
+
+
+                <div class="education-grid">
+
+                    <div>
+                        <span>Percentage</span>
+
+                        <strong>
+                            {{ academic.twelfth_percentage }}%
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>School / College</span>
+
+                        <strong>
+                            {{ academic.twelfth_collage }}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Board</span>
+
+                        <strong>
+                            {{ academic.twelfth_board }}
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Passing Year</span>
+
+                        <strong>
+                            {{ academic.twelfth_passing_year }}
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- ==============================
+             DOCUMENT SECTION
+        =============================== -->
+
+        <div class="document-status-card">
+
+            <div>
+
+                <span class="details-tag">
+                    DOCUMENTS
+                </span>
+
+                <h2>
+                    Admission Documents
+                </h2>
+
+                <p>
+                    Required documents submitted for verification.
+                </p>
+
+            </div>
+
+            <a href="{% url 'my_application' application.application_number %}"
+               class="application-button">
+
+                📋 View My Application →
+
+            </a>
+
+
+            <a href="{% url 'documents_upload' %}"
+               class="document-button">
+
+                📄 View / Update Documents →
+
+            </a>
+
+        </div>
+
+
+        <!-- ==============================
+             BACK BUTTON
+        =============================== -->
+
+        <div class="status-actions">
+
+            <a href="{% url 'student_dashboard' %}"
+               class="back-dashboard">
+
+                ← Back to Student Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

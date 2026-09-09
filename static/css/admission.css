@@ -1,0 +1,1315 @@
+/* ==========================================
+   ADMISSION APPLICATION PAGE
+========================================== */
+
+.admission-section {
+    background: #fff7f0;
+    padding: 55px 20px 80px;
+    min-height: 700px;
+}
+
+.admission-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   ADMISSION IMAGE
+========================================== */
+
+.admission-image-wrapper {
+    width: 100%;
+    height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    margin-bottom: 32px;
+
+    background: #fff;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+.admission-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   APPLICATION CARD
+========================================== */
+
+.admission-card {
+    background: #ffffff;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 18px;
+
+    padding: 42px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================
+   INTRO
+========================================== */
+
+.application-intro {
+    text-align: center;
+
+    padding-bottom: 30px;
+
+    margin-bottom: 35px;
+
+    border-bottom: 1px solid #f1dfd0;
+}
+
+.application-tag {
+    display: inline-block;
+
+    color: #f36f21;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.application-intro h2 {
+    margin: 0 0 8px;
+
+    color: #292929;
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+.application-intro p {
+    margin: 0 auto;
+
+    max-width: 650px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
+
+.form-section-title {
+    margin-bottom: 25px;
+}
+
+.form-section-title > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.section-number {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.section-text h3 {
+    margin: 0 0 4px;
+
+    color: #292929;
+
+    font-size: 21px;
+}
+
+.section-text p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+.academic-section-title {
+    margin-top: 40px;
+}
+
+
+/* ==========================================
+   FORM GROUP
+========================================== */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    color: #292929;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: #f36f21;
+
+    margin-left: 2px;
+}
+
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #292929;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #f0b38d;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #f36f21;
+
+    box-shadow:
+        0 0 0 3px rgba(243, 111, 33, 0.10);
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+
+/* ==========================================
+   ACADEMIC GRID
+========================================== */
+
+.academic-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0 25px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* ==========================================
+   HELP TEXT
+========================================== */
+
+.form-group small {
+    margin-top: 5px;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   ERRORS
+========================================== */
+
+.form-error {
+    background: #fff0eb;
+
+    border: 1px solid #f3c7b0;
+
+    border-radius: 8px;
+
+    padding: 12px 15px;
+
+    margin-bottom: 20px;
+
+    color: #d9570e;
+
+    font-size: 13px;
+}
+
+.field-error {
+    margin-top: 5px;
+
+    color: #d9570e;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   ADMISSION ACTION AREA
+========================================== */
+
+.admission-actions {
+    margin-top: 40px;
+    padding-top: 28px;
+
+    border-top: 1px solid #eee1d7;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* ==========================================
+   BACK TO DASHBOARD
+========================================== */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+
+    color: #666;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 11px 4px;
+
+    transition: all 0.25s ease;
+}
+
+.back-button:hover {
+    color: #f36f21;
+}
+
+
+/* ==========================================
+   RIGHT SIDE BUTTONS
+========================================== */
+
+.admission-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* ==========================================
+   DOCUMENTS BUTTON
+========================================== */
+
+.documents-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-width: 155px;
+
+    padding: 12px 20px;
+
+    border: 1px solid #f36f21;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #d9570e;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-sizing: border-box;
+
+    transition: all 0.25s ease;
+}
+
+.documents-button:hover {
+    background: #fff4eb;
+
+    border-color: #d9570e;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 14px rgba(217, 87, 14, 0.10);
+}
+
+
+/* ==========================================
+   SUBMIT BUTTON
+========================================== */
+
+.submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-width: 185px;
+
+    padding: 13px 22px;
+
+    border: 1px solid #f36f21;
+    border-radius: 9px;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition: all 0.25s ease;
+}
+
+.submit-button:hover {
+    background: #d9570e;
+
+    border-color: #d9570e;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(217, 87, 14, 0.20);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 750px) {
+
+    .admission-actions {
+        align-items: flex-start;
+    }
+
+    .admission-action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .documents-button,
+    .submit-button {
+        width: 100%;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .admission-actions {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 18px;
+    }
+
+    .back-button {
+        justify-content: center;
+        order: 3;
+    }
+
+    .admission-action-buttons {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .documents-button,
+    .submit-button {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}
+
+/* =========================================
+   ADMISSION FORM
+   SMOOTH PROFESSIONAL ANIMATIONS
+   ========================================= */
+
+
+/* =========================================
+   PAGE ENTRY
+   ========================================= */
+
+.admission-section,
+.admission-container,
+.admission-page {
+    animation: admissionPageIn 0.7s ease-out both;
+}
+
+@keyframes admissionPageIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.admission-header,
+.admission-hero {
+    animation: admissionHeaderIn 0.7s ease-out both;
+}
+
+@keyframes admissionHeaderIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admission-header h1,
+.admission-hero h1 {
+    animation: admissionTitleIn 0.6s ease-out 0.15s both;
+}
+
+@keyframes admissionTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admission-header p,
+.admission-hero p {
+    animation: admissionTextIn 0.6s ease-out 0.25s both;
+}
+
+@keyframes admissionTextIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   FORM CARD
+   ========================================= */
+
+.admission-form-card,
+.admission-card,
+.form-card {
+    animation: admissionCardIn 0.7s ease-out 0.15s both;
+}
+
+@keyframes admissionCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   FORM SECTION
+   ========================================= */
+
+.admission-form-section,
+.form-section,
+.academic-section {
+    animation: formSectionIn 0.6s ease-out both;
+}
+
+@keyframes formSectionIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+   ========================================= */
+
+.admission-form-section h2,
+.form-section h2,
+.academic-section h2 {
+    animation: formHeadingIn 0.5s ease-out 0.15s both;
+}
+
+@keyframes formHeadingIn {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   FORM FIELDS
+   ========================================= */
+
+.admission-form .form-group,
+.admission-form p,
+.admission-form .field-group {
+    opacity: 0;
+
+    animation:
+        admissionFieldIn
+        0.5s
+        ease-out
+        forwards;
+}
+
+.admission-form .form-group:nth-child(1),
+.admission-form p:nth-child(1),
+.admission-form .field-group:nth-child(1) {
+    animation-delay: 0.10s;
+}
+
+.admission-form .form-group:nth-child(2),
+.admission-form p:nth-child(2),
+.admission-form .field-group:nth-child(2) {
+    animation-delay: 0.17s;
+}
+
+.admission-form .form-group:nth-child(3),
+.admission-form p:nth-child(3),
+.admission-form .field-group:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.admission-form .form-group:nth-child(4),
+.admission-form p:nth-child(4),
+.admission-form .field-group:nth-child(4) {
+    animation-delay: 0.31s;
+}
+
+.admission-form .form-group:nth-child(5),
+.admission-form p:nth-child(5),
+.admission-form .field-group:nth-child(5) {
+    animation-delay: 0.38s;
+}
+
+.admission-form .form-group:nth-child(6),
+.admission-form p:nth-child(6),
+.admission-form .field-group:nth-child(6) {
+    animation-delay: 0.45s;
+}
+
+.admission-form .form-group:nth-child(7),
+.admission-form p:nth-child(7),
+.admission-form .field-group:nth-child(7) {
+    animation-delay: 0.52s;
+}
+
+.admission-form .form-group:nth-child(8),
+.admission-form p:nth-child(8),
+.admission-form .field-group:nth-child(8) {
+    animation-delay: 0.59s;
+}
+
+@keyframes admissionFieldIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   LABELS
+   ========================================= */
+
+.admission-form label {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.admission-form .form-group:focus-within label,
+.admission-form p:focus-within label {
+    color: #d9570e;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+.admission-form input,
+.admission-form select,
+.admission-form textarea {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease,
+        background 0.25s ease;
+}
+
+.admission-form input:hover,
+.admission-form select:hover,
+.admission-form textarea:hover {
+    border-color: #f36f21;
+}
+
+.admission-form input:focus,
+.admission-form select:focus,
+.admission-form textarea:focus {
+    outline: none;
+
+    border-color: #f36f21;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 3px rgba(243, 111, 33, 0.12),
+        0 5px 15px rgba(60, 35, 20, 0.06);
+}
+
+
+/* =========================================
+   COURSE SELECT
+   ========================================= */
+
+.admission-form select {
+    cursor: pointer;
+}
+
+.admission-form select:focus {
+    box-shadow:
+        0 0 0 3px rgba(243, 111, 33, 0.13),
+        0 6px 16px rgba(60, 35, 20, 0.07);
+}
+
+
+/* =========================================
+   TEXTAREA
+   ========================================= */
+
+.admission-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+/* =========================================
+   REQUIRED FIELD
+   ========================================= */
+
+.admission-form .required {
+    transition:
+        color 0.25s ease;
+}
+
+.admission-form .form-group:focus-within .required {
+    color: #d9570e;
+}
+
+
+/* =========================================
+   HELP TEXT
+   ========================================= */
+
+.admission-form .helptext,
+.admission-form .help-text {
+    animation: helpTextIn 0.5s ease-out 0.35s both;
+}
+
+@keyframes helpTextIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   FORM ERRORS
+   ========================================= */
+
+.admission-form .errorlist,
+.admission-error,
+.form-error {
+    animation: admissionErrorIn 0.5s ease-out both;
+}
+
+@keyframes admissionErrorIn {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-8px);
+    }
+
+    30% {
+        transform: translateX(5px);
+    }
+
+    60% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+   ========================================= */
+
+.admission-success,
+.admission-message,
+.alert-success {
+    animation: admissionSuccessIn 0.6s ease-out both;
+}
+
+@keyframes admissionSuccessIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+   ========================================= */
+
+.admission-form button[type="submit"],
+.admission-submit,
+.submit-button {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.admission-form button[type="submit"]:hover,
+.admission-submit:hover,
+.submit-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 24px rgba(217, 87, 14, 0.23);
+}
+
+
+/* =========================================
+   BUTTON SHINE
+   ========================================= */
+
+.admission-form button[type="submit"]::after,
+.admission-submit::after,
+.submit-button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.28),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.55s ease;
+}
+
+.admission-form button[type="submit"]:hover::after,
+.admission-submit:hover::after,
+.submit-button:hover::after {
+    left: 140%;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.admission-back,
+.back-button {
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+.admission-back:hover,
+.back-button:hover {
+    transform: translateX(-4px);
+    color: #f36f21;
+}
+
+
+/* =========================================
+   COURSE INFORMATION / HIGHLIGHT
+   ========================================= */
+
+.course-info,
+.selected-course,
+.course-summary {
+    animation: courseSummaryIn 0.6s ease-out 0.3s both;
+}
+
+@keyframes courseSummaryIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .admission-form-card,
+    .admission-card,
+    .form-card {
+        animation-duration: 0.55s;
+    }
+
+    .admission-form .form-group,
+    .admission-form p,
+    .admission-form .field-group {
+        animation-duration: 0.45s;
+    }
+
+    .admission-form input:focus,
+    .admission-form select:focus,
+    .admission-form textarea:focus {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admission-section,
+    .admission-container,
+    .admission-page,
+    .admission-header,
+    .admission-hero,
+    .admission-header h1,
+    .admission-hero h1,
+    .admission-header p,
+    .admission-hero p,
+    .admission-form-card,
+    .admission-card,
+    .form-card,
+    .admission-form-section,
+    .form-section,
+    .academic-section,
+    .admission-form-section h2,
+    .form-section h2,
+    .academic-section h2,
+    .admission-form .form-group,
+    .admission-form p,
+    .admission-form .field-group,
+    .admission-form .helptext,
+    .admission-form .help-text,
+    .admission-form .errorlist,
+    .admission-error,
+    .form-error,
+    .admission-success,
+    .admission-message,
+    .alert-success,
+    .course-info,
+    .selected-course,
+    .course-summary {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 800px) {
+
+    .admission-section {
+        padding: 45px 18px 65px;
+    }
+
+    .admission-image-wrapper {
+        height: 350px;
+    }
+
+    .admission-card {
+        padding: 32px;
+    }
+
+    .academic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .admission-section {
+        padding: 30px 15px 55px;
+    }
+
+    .admission-image-wrapper {
+        height: 260px;
+
+        border-radius: 14px;
+    }
+
+    .admission-card {
+        padding: 25px 20px;
+
+        border-radius: 14px;
+    }
+
+    .application-intro h2 {
+        font-size: 23px;
+    }
+
+    .application-intro p {
+        font-size: 13px;
+    }
+
+    .section-number {
+        width: 40px;
+        height: 40px;
+    }
+
+    .section-text h3 {
+        font-size: 18px;
+    }
+
+    .admission-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+
+        gap: 18px;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    .back-button {
+        text-align: center;
+    }
+
+}
+/* ==========================================
+   ACADEMIC BOX
+========================================== */
+
+.academic-box {
+    background: #fffaf6;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    transition: 0.25s ease;
+}
+
+.academic-box:hover {
+    border-color: #f0c2a2;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ==========================================
+   ACADEMIC HEADER
+========================================== */
+
+.academic-box-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid #f1dfd0;
+}
+
+.academic-label {
+    display: block;
+
+    color: #f36f21;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 5px;
+}
+
+.academic-box-header h4 {
+    margin: 0;
+
+    color: #292929;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   ACADEMIC ICON
+========================================== */
+
+.academic-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   ACADEMIC GRID
+========================================== */
+
+.academic-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0 25px;
+}
+
+.academic-grid .form-group {
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .academic-box {
+        padding: 20px;
+    }
+
+    .academic-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

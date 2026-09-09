@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-
+from admission.models import AdmissionApplication
 from .forms import  StudentProfileForm
 from .models import  StudentProfile
 
@@ -17,3 +17,18 @@ def Profile_View(request):
         form = StudentProfileForm(instance=profile)
 
     return render(request, 'students/profile.html', {'form': form})
+
+
+
+
+
+@login_required
+def view_applications(request):
+
+    applications = AdmissionApplication.objects.filter(student=request.user).select_related('course').order_by('-application_date')
+
+    context = {
+        'applications': applications,
+    }
+
+    return render(request,'students/view_applications.html',context)

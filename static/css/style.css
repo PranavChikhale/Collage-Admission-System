@@ -1,0 +1,663 @@
+/* =========================================
+   COLLEGE ADMISSION MANAGEMENT SYSTEM
+   BASE / COMMON CSS
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #f36f21;
+    --dark-orange: #d9570e;
+    --light-orange: #fff3e8;
+    --cream: #fff7f0;
+    --dark: #292929;
+    --text: #333333;
+    --muted: #777777;
+    --white: #ffffff;
+    --border: #e5e5e5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+
+.top-bar {
+    background: var(--dark-orange);
+    color: var(--white);
+    font-size: 13px;
+}
+
+.top-bar-content {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.top-left,
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-right {
+    gap: 12px;
+}
+
+/* =========================================
+   HEADER / NAVBAR
+   ========================================= */
+
+.header {
+    background: var(--white);
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.logo-text {
+    line-height: 1.15;
+}
+
+.college-name {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.college-name span {
+    color: var(--orange);
+}
+
+.management {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #555;
+    margin-top: 3px;
+}
+
+.tagline {
+    font-size: 10px;
+    color: var(--orange);
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.tagline span {
+    color: #aaa;
+    margin: 0 3px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--orange);
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+    background: var(--orange);
+}
+
+.nav-links .nav-button {
+    background: var(--orange);
+    color: var(--white);
+    padding: 10px 19px;
+    border-radius: 5px;
+}
+
+.nav-links .nav-button:hover {
+    background: var(--dark-orange);
+    color: var(--white);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--orange);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* =========================================
+   COMMON BUTTONS
+   ========================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--orange);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--dark-orange);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+}
+
+.btn-outline:hover {
+    background: var(--orange);
+    color: var(--white);
+}
+
+/* =========================================
+   MESSAGES
+   ========================================= */
+
+.messages-container {
+    padding-top: 15px;
+}
+
+.message {
+    background: #eaf8ee;
+    border: 1px solid #bce5c7;
+    color: #26733a;
+    border-radius: 5px;
+    padding: 11px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.message span {
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer {
+    background: var(--dark);
+    color: #dddddd;
+    margin-top: 60px;
+}
+
+.footer-content {
+    padding: 42px 0 35px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+    gap: 40px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.footer-brand h3 {
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+.footer-brand h3 span {
+    color: var(--orange);
+}
+
+.footer-brand > p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.footer-brand small {
+    color: var(--orange);
+    font-size: 11px;
+}
+
+.footer-description {
+    margin-top: 12px;
+    color: #aaaaaa;
+    font-size: 13px !important;
+    letter-spacing: 0 !important;
+    font-weight: 400 !important;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-column h4 {
+    color: var(--white);
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.footer-line {
+    width: 35px;
+    height: 2px;
+    background: var(--orange);
+    margin-bottom: 7px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #aaaaaa;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--orange);
+}
+
+.footer-contact p {
+    line-height: 1.5;
+}
+
+.footer-social {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.footer-social a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social a:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+}
+
+.footer-bottom-content {
+    min-height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #888888;
+    font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .top-right {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        border-top: 1px solid #eeeeee;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a.active::after {
+        display: none;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .top-left span {
+        font-size: 11px;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .college-name {
+        font-size: 15px;
+    }
+
+    .management {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+    }
+
+    .tagline {
+        font-size: 8px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        padding: 35px 0 25px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-bottom-content {
+        padding: 12px 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 4px;
+    }
+}
+
+/* =========================================
+   GLOBAL SMOOTH ANIMATIONS
+   ========================================= */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================
+   PAGE LOAD
+   ========================================= */
+
+body {
+    animation: pageFadeIn 0.5s ease-out;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   NAVBAR ANIMATION
+   ========================================= */
+
+.navbar {
+    animation: navbarSlideDown 0.6s ease-out;
+}
+
+@keyframes navbarSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+   ========================================= */
+
+.navbar a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.navbar a:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   BUTTON ANIMATION
+   ========================================= */
+
+button,
+.btn,
+.primary-button,
+.card-button,
+.apply-button,
+.my-application-button,
+.pdf-button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+button:hover,
+.btn:hover,
+.primary-button:hover,
+.card-button:hover,
+.apply-button:hover,
+.my-application-button:hover,
+.pdf-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   IMAGE SMOOTHNESS
+   ========================================= */
+
+img {
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+
+/* =========================================
+   CARD ANIMATION
+   ========================================= */
+
+.card,
+.feature-card,
+.course-card,
+.application-card,
+.application-small-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================
+   LINK ANIMATION
+   ========================================= */
+
+a {
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* =========================================
+   FORM INPUT ANIMATION
+   ========================================= */
+
+input,
+select,
+textarea {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   SECTION REVEAL
+   ========================================= */
+
+section {
+    animation: sectionReveal 0.7s ease-out both;
+}
+
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

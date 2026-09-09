@@ -1,10 +1,374 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        College Admission Management System
+        {% endblock %}
+    </title>
+
+    {% load static %}
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Page Specific CSS -->
+    {% block extra_css %}
+    {% endblock %}
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
 </head>
+
 <body>
-$END$
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top-bar">
+
+    <div class="container top-bar-content">
+
+        <div class="top-left">
+            🎓
+            <span>Education Today, A Better Tomorrow</span>
+        </div>
+
+        <div class="top-right">
+
+            <span>📞 +91 98765 43210</span>
+
+            <span class="top-divider">|</span>
+
+            <span>✉ info@college.edu.in</span>
+
+            <span class="top-divider">|</span>
+
+            <span>f</span>
+            <span>◎</span>
+            <span>in</span>
+            <span>▶</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <!-- LOGO -->
+
+        <a href="{% url 'home' %}" class="logo">
+
+            <img src="{% static 'images/logo.png' %}"
+                 alt="College Logo">
+
+            <div class="logo-text">
+
+                <div class="college-name">
+                    COLLEGE <span>ADMISSION</span>
+                </div>
+
+                <div class="management">
+                    MANAGEMENT SYSTEM
+                </div>
+
+                <div class="tagline">
+                    Learn <span>|</span> Apply <span>|</span> Grow
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+
+        <!-- NAVIGATION -->
+
+       <nav class="nav-links" id="navLinks">
+
+    <a href="{% url 'home' %}"
+       class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+        Home
+    </a>
+
+    <a href="{% url 'course_list' %}"
+       class="{% if request.resolver_match.url_name == 'course_list' %}active{% endif %}">
+        Courses
+    </a>
+
+    <a href="#"
+       class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+        About Us
+    </a>
+
+    <a href="#"
+       class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+        Contact
+    </a>
+
+    {% if user.is_authenticated %}
+
+        {% if user.is_superuser %}
+            <a href="{% url 'admin_dashboard' %}"
+               class="{% if request.resolver_match.url_name == 'admin_dashboard' %}active{% endif %}">
+                Admin Dashboard
+            </a>
+
+        {% elif user.userprofile.role == 'admin' %}
+            <a href="{% url 'admin_dashboard' %}"
+               class="{% if request.resolver_match.url_name == 'admin_dashboard' %}active{% endif %}">
+                Admin Dashboard
+            </a>
+
+        {% else %}
+            <a href="{% url 'student_dashboard' %}"
+               class="{% if request.resolver_match.url_name == 'student_dashboard' %}active{% endif %}">
+                Student Dashboard
+            </a>
+        {% endif %}
+
+        <a href="{% url 'logout' %}">Logout</a>
+
+    {% else %}
+
+        <a href="{% url 'login' %}"
+           class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+            Login
+        </a>
+
+        <a href="{% url 'register' %}"
+           class="nav-button {% if request.resolver_match.url_name == 'register' %}active-button{% endif %}">
+            Register
+        </a>
+
+    {% endif %}
+
+</nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MESSAGES ================= -->
+
+{% if messages %}
+
+<div class="container messages-container">
+
+    {% for message in messages %}
+
+        <div class="message">
+
+            <span>✓</span>
+
+            {{ message }}
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endif %}
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <img src="{% static 'images/logo.png' %}"
+                 alt="College Logo"
+                 class="footer-logo-img">
+
+            <h3>
+                COLLEGE <span>ADMISSION</span>
+            </h3>
+
+            <p>
+                MANAGEMENT SYSTEM
+            </p>
+
+            <small>
+                Learn | Apply | Grow
+            </small>
+
+            <p class="footer-description">
+                Making the college admission process
+                simple, secure and transparent.
+            </p>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h4>Quick Links</h4>
+
+            <span class="footer-line"></span>
+
+            <a href="{% url 'home' %}">
+                Home
+            </a>
+
+            <a href="{% url 'course_list' %}">
+                Courses
+            </a>
+
+            <a href="#">
+                About Us
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+
+        <!-- ADMISSION -->
+
+        <div class="footer-column">
+
+            <h4>Admission</h4>
+
+            <span class="footer-line"></span>
+
+            <a href="{% url 'register' %}">
+                Apply Online
+            </a>
+
+            <a href="{% url 'login' %}">
+                Student Login
+            </a>
+
+            <a href="#">
+                Admission Process
+            </a>
+
+            <a href="#">
+                FAQs
+            </a>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column footer-contact">
+
+            <h4>Contact Us</h4>
+
+            <span class="footer-line"></span>
+
+            <p>
+                📍 123 College Road,
+                Pune, Maharashtra - 411001
+            </p>
+
+            <p>
+                📞 +91 98765 43210
+            </p>
+
+            <p>
+                ✉ info@college.edu.in
+            </p>
+
+
+            <div class="footer-social">
+
+                <a href="#">f</a>
+                <a href="#">◎</a>
+                <a href="#">in</a>
+                <a href="#">▶</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom-content">
+
+            <p>
+                © 2026 College Admission Management System.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Designed for Students 🎓
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= MOBILE MENU JS ================= -->
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+
+    navLinks.classList.toggle("active");
+
+});
+
+</script>
+
 </body>
+
 </html>

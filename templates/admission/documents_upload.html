@@ -1,26 +1,169 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Document Upload</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-<h2>Upload Documents</h2>
+{% block title %}
+Document Upload | College Admission Management System
+{% endblock %}
 
-<p>
-    Application Number:
-    <strong>{{ application.application_number }}</strong>
-</p>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/documents.css' %}">
+{% endblock %}
 
-<form method="POST" enctype="multipart/form-data">
+{% block content %}
 
-    {% csrf_token %}
+<section class="documents-section">
 
-    {{ form.as_p }}
+    <div class="documents-container">
 
-    <button type="submit">Upload Documents</button>
+        <!-- Image -->
+        <div class="documents-image-wrapper">
 
-</form>
+            <img src="{% static 'images/documents.jpg' %}"
+                 alt="Document Upload"
+                 class="documents-image">
 
-</body>
-</html>
+        </div>
+
+
+        <!-- Upload Card -->
+        <div class="documents-card">
+
+            <div class="documents-intro">
+
+                <span class="documents-tag">
+                    DOCUMENT VERIFICATION
+                </span>
+
+                <h1>Upload Your Documents</h1>
+
+                <p>
+                    Upload clear and valid documents required for your
+                    college admission application.
+                </p>
+
+            </div>
+
+
+            <!-- Application Information -->
+
+            <div class="application-info">
+
+                <div>
+                    <span>Application Number</span>
+
+                    <strong>
+                        {{ application.application_number }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Course</span>
+
+                    <strong>
+                        {{ application.course.course_name }}
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <form method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+
+                {% if form.non_field_errors %}
+
+                    <div class="form-error">
+                        {{ form.non_field_errors }}
+                    </div>
+
+                {% endif %}
+
+
+                <div class="document-grid">
+
+                    {% for field in form %}
+
+                        <div class="document-field">
+
+                            <label for="{{ field.id_for_label }}">
+
+                                {{ field.label }}
+
+                                {% if field.field.required %}
+                                    <span>*</span>
+                                {% endif %}
+
+                            </label>
+
+                            <div class="file-input-wrapper">
+
+                                {{ field }}
+
+                            </div>
+
+                            {% for error in field.errors %}
+
+                                <div class="field-error">
+                                    {{ error }}
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <!-- Upload Information -->
+
+                <div class="upload-note">
+
+                    <span class="note-icon">
+                        ℹ
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Document Guidelines
+                        </strong>
+
+                        <p>
+                            Upload clear and readable files. Make sure the
+                            information is visible before submitting.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+
+                <div class="documents-actions">
+
+                    <a href="{% url 'student_dashboard' %}"
+                       class="back-button">
+                        ← Back to Dashboard
+                    </a>
+
+                    <button type="submit"
+                            class="upload-button">
+                        Upload Documents →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

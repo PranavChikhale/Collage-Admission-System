@@ -1,33 +1,717 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student Dashboard</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
 
-<body>
+{% block title %}
+Student Dashboard | College Admission Management System
+{% endblock %}
 
-    <h1>Student Dashboard</h1>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
 
-    <h2>Welcome, {{ user.username }}</h2>
 
-    <p>You are logged in as a Student.</p>
+{% block content %}
 
-    <a href="{% url 'logout' %}">
-        Logout
-    </a>
-    <br><br>
+<section class="dashboard-section">
 
-    <a href="{% url 'student_profile' %}"> Complete Profile </a>
+    <div class="dashboard-container">
 
-    <br><br>
-    <a href="{% url 'documents_upload' %}">
-        Upload Documents
-    </a>
 
-    <br><br>
-    <a href="{% url 'admission_form' %}">
-        Apply for Admission
-    </a>
+        <!-- =========================================
+             WELCOME HERO
+        ========================================== -->
 
-</body>
-</html>
+        <div class="dashboard-hero">
+
+            <div class="dashboard-hero-content">
+
+                <span class="dashboard-tag">
+                    STUDENT PORTAL
+                </span>
+
+                <h1>
+                    Welcome,
+                    {% if user.first_name %}
+                        {{ user.first_name }}
+                    {% else %}
+                        {{ user.username }}
+                    {% endif %}
+                    👋
+                </h1>
+
+                <p>
+                    Welcome to your college admission dashboard.
+                    Manage your profile, explore courses, submit applications
+                    and track your admission journey from one place.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="{% url 'student_profile' %}"
+                        class="hero-primary-btn"
+                    >
+                        ✏️ Manage Profile
+                    </a>
+
+                    <a
+                        href="{% url 'course_list' %}"
+                        class="hero-secondary-btn"
+                    >
+                        📚 Explore Courses
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-hero-image">
+
+                <img
+                    src="{% static 'images/student_dashboard.jpg' %}"
+                    alt="Student Dashboard"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             QUICK STATS
+        ========================================== -->
+
+        <div class="dashboard-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🎓
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Student Portal
+                    </span>
+
+                    <strong>
+                        Active
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Courses
+                    </span>
+
+                    <strong>
+                        Explore
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📝
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Admission
+                    </span>
+
+                    <strong>
+                        Online
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📋
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Applications
+                    </span>
+
+                    <strong>
+                        {% if applications %}
+                            {{ applications|length }}
+                        {% else %}
+                            0
+                        {% endif %}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             SECTION HEADING
+        ========================================== -->
+
+        <div class="dashboard-heading">
+
+            <span class="section-tag">
+                QUICK ACCESS
+            </span>
+
+            <h2>
+                Manage Your Admission
+            </h2>
+
+            <p>
+                Everything you need for your college admission is available here.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================================
+             MAIN DASHBOARD CARDS
+        ========================================== -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- =====================================
+                 PROFILE
+            ====================================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-image">
+
+                    <img
+                        src="{% static 'images/student_profile.jpg' %}"
+                        alt="Student Profile"
+                    >
+
+                    <span class="card-number">
+                        01
+                    </span>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <span class="card-label">
+                        PERSONAL INFORMATION
+                    </span>
+
+                    <h3>
+                        Student Profile
+                    </h3>
+
+                    <p>
+                        Add or update your personal information,
+                        contact details, address, gender and category.
+                    </p>
+
+                    <a
+                        href="{% url 'student_profile' %}"
+                        class="card-button"
+                    >
+                        Manage Profile →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 COURSES
+            ====================================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-image">
+
+                    <img
+                        src="{% static 'images/campus-building.jpg' %}"
+                        alt="Available Courses"
+                    >
+
+                    <span class="card-number">
+                        02
+                    </span>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <span class="card-label">
+                        ACADEMIC PROGRAMS
+                    </span>
+
+                    <h3>
+                        Explore Courses
+                    </h3>
+
+                    <p>
+                        Explore available courses, departments,
+                        duration, seats and course descriptions.
+                    </p>
+
+                    <a
+                        href="{% url 'course_list' %}"
+                        class="card-button"
+                    >
+                        View Courses →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 ADMISSION
+            ====================================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-image">
+
+                    <img
+                        src="{% static 'images/student-walk.jpg' %}"
+                        alt="Admission Application"
+                    >
+
+                    <span class="card-number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <span class="card-label">
+                        ONLINE ADMISSION
+                    </span>
+
+                    <h3>
+                        Apply for Admission
+                    </h3>
+
+                    <p>
+                        Select your desired course and submit
+                        your academic information for admission.
+                    </p>
+
+                    <a
+                        href="{% url 'admission_form' %}"
+                        class="card-button"
+                    >
+                        Apply Now →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 DOCUMENTS
+            ====================================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-image">
+
+                    <img
+                        src="{% static 'images/documents.jpg' %}"
+                        alt="Document Upload"
+                    >
+
+                    <span class="card-number">
+                        04
+                    </span>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <span class="card-label">
+                        DOCUMENT VERIFICATION
+                    </span>
+
+                    <h3>
+                        Upload Documents
+                    </h3>
+
+                    <p>
+                        Upload your photo, signature, marksheets,
+                        leaving certificate and other required documents.
+                    </p>
+
+                    <a
+                        href="{% url 'documents_upload' %}"
+                        class="card-button"
+                    >
+                        Upload Documents →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 VIEW APPLICATIONS
+            ====================================== -->
+
+            <div class="dashboard-card applications-card">
+
+                <div class="applications-card-top">
+
+                    <div class="applications-icon">
+                        📋
+                    </div>
+
+                    <span class="card-number">
+                        05
+                    </span>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <span class="card-label">
+                        APPLICATION MANAGEMENT
+                    </span>
+
+                    <h3>
+                        View Applications
+                    </h3>
+
+                    <p>
+                        View all your submitted course applications,
+                        application numbers and current admission status.
+                    </p>
+
+
+
+
+                        <div class="application-count">
+
+    <strong>
+        {{ application_count }}
+    </strong>
+
+    <span>
+        Application{{ application_count|pluralize }}
+        Submitted
+    </span>
+
+</div>
+
+                        <a
+                            href="{% url 'view_applications' %}"
+                            class="card-button"
+                        >
+                            View Applications →
+                        </a>
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <!-- =========================================
+             ADMISSION JOURNEY
+        ========================================== -->
+
+        <div
+            class="process-section"
+            id="admission-journey"
+        >
+
+            <div class="process-heading">
+
+                <span class="section-tag">
+                    ADMISSION JOURNEY
+                </span>
+
+                <h2>
+                    Complete Your Admission Step by Step
+                </h2>
+
+                <p>
+                    Follow these simple steps to complete your college admission.
+                </p>
+
+            </div>
+
+
+            <div class="process-steps">
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Complete Profile
+                        </h3>
+
+                        <p>
+                            Enter your personal information and contact details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Explore Courses
+                        </h3>
+
+                        <p>
+                            Find the course and program that suits you.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Apply
+                        </h3>
+
+                        <p>
+                            Submit your course and academic information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Upload Documents
+                        </h3>
+
+                        <p>
+                            Submit all required admission documents.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        05
+                    </div>
+
+                    <div class="step-content">
+
+                        <h3>
+                            Track Application
+                        </h3>
+
+                        <p>
+                            View your application and check its status.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             IMPORTANT NOTICE
+        ========================================== -->
+
+        <div class="dashboard-notice">
+
+            <div class="notice-icon">
+                !
+            </div>
+
+            <div class="notice-content">
+
+                <h3>
+                    Important Information
+                </h3>
+
+                <p>
+                    Please ensure that your personal information,
+                    academic details and uploaded documents are accurate
+                    and clearly readable before completing your application.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             FINAL CTA
+        ========================================== -->
+
+        <div class="dashboard-cta">
+
+            <div class="cta-content">
+
+                <span>
+                    COLLEGE ADMISSION
+                </span>
+
+                <h2>
+                    Start Your Academic Journey
+                </h2>
+
+                <p>
+                    Explore courses and submit your application online.
+                </p>
+
+            </div>
+
+
+            <div class="cta-buttons">
+
+                <a
+                    href="{% url 'course_list' %}"
+                    class="cta-outline-button"
+                >
+                    Explore Courses
+                </a>
+
+                <a
+                    href="{% url 'admission_form' %}"
+                    class="cta-button"
+                >
+                    Start Application →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             LOGOUT
+        ========================================== -->
+
+        <div class="dashboard-logout">
+
+            <a href="{% url 'logout' %}">
+                Logout from Student Portal
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+{% endblock %}

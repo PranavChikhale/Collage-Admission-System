@@ -1,32 +1,311 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Admission Application</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-    <h2>College Admission Application</h2>
+{% block title %}
+Admission Application | College Admission Management System
+{% endblock %}
 
-    <form method="POST">
-        {% csrf_token %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/admission.css' %}">
+{% endblock %}
 
-        <h3>Course Selection</h3>
+{% block content %}
 
-        {{ application_form.as_p }}
+<section class="admission-section">
 
-        <hr>
+    <div class="admission-container">
 
-        <h3>Academic Details</h3>
+        <!-- Admission Image -->
+        <div class="admission-image-wrapper">
 
-        {{ academic_form.as_p }}
+            <img src="{% static 'images/student-walk.jpg' %}"
+                 alt="College Admission Application"
+                 class="admission-image">
 
-        <br>
+        </div>
 
-        <button type="submit">
-            Submit Application
-        </button>
 
-    </form>
+        <!-- Application Card -->
+        <div class="admission-card">
 
-</body>
-</html>
+            <div class="application-intro">
+
+                <span class="application-tag">
+                    APPLICATION FORM
+                </span>
+
+                <h2>Start Your Admission Journey</h2>
+
+                <p>
+                    Please provide accurate information to complete your
+                    college admission application.
+                </p>
+
+            </div>
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- =================================
+                     COURSE SELECTION
+                ================================= -->
+
+                <div class="form-section-title">
+
+                    <div class="section-heading">
+
+                        <span class="section-number">
+                            01
+                        </span>
+
+                        <div class="section-text">
+
+                            <h3>Course Selection</h3>
+
+                            <p>
+                                Select your preferred course.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {% if application_form.non_field_errors %}
+
+                    <div class="form-error">
+                        {{ application_form.non_field_errors }}
+                    </div>
+
+                {% endif %}
+
+
+                {% for field in application_form %}
+
+                    <div class="form-group">
+
+                        <label for="{{ field.id_for_label }}">
+
+                            {{ field.label }}
+
+                            {% if field.field.required %}
+                                <span>*</span>
+                            {% endif %}
+
+                        </label>
+
+                        {{ field }}
+
+                        {% for error in field.errors %}
+
+                            <div class="field-error">
+                                {{ error }}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endfor %}
+
+
+
+                <!-- =================================
+                     ACADEMIC DETAILS
+                ================================= -->
+
+                <div class="form-section-title academic-section-title">
+
+                    <div class="section-heading">
+
+                        <span class="section-number">
+                            02
+                        </span>
+
+                        <div class="section-text">
+
+                            <h3>Academic Details</h3>
+
+                            <p>
+                                Provide your 10th and 12th academic information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {% if academic_form.non_field_errors %}
+
+                    <div class="form-error">
+                        {{ academic_form.non_field_errors }}
+                    </div>
+
+                {% endif %}
+
+
+
+                <!-- =================================
+                     10th DETAILS
+                ================================= -->
+
+                <div class="academic-box">
+
+                    <div class="academic-box-header">
+
+                        <div>
+
+                            <span class="academic-label">
+                                10th / SSC
+                            </span>
+
+                            <h4>
+                                Secondary School Details
+                            </h4>
+
+                        </div>
+
+                        <span class="academic-icon">
+                            10
+                        </span>
+
+                    </div>
+
+
+                    <div class="academic-grid">
+
+                        {% for field in academic_form %}
+
+                            {% if field.name == 'tenth_percentage' or field.name == 'tenth_collage' or field.name == 'tenth_board' or field.name == 'tenth_passing_year' %}
+
+                                <div class="form-group">
+
+                                    <label for="{{ field.id_for_label }}">
+
+                                        {{ field.label }}
+
+                                        {% if field.field.required %}
+                                            <span>*</span>
+                                        {% endif %}
+
+                                    </label>
+
+                                    {{ field }}
+
+                                    {% for error in field.errors %}
+
+                                        <div class="field-error">
+                                            {{ error }}
+                                        </div>
+
+                                    {% endfor %}
+
+                                </div>
+
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     12th DETAILS
+                ================================= -->
+
+                <div class="academic-box">
+
+                    <div class="academic-box-header">
+
+                        <div>
+
+                            <span class="academic-label">
+                                12th / HSC
+                            </span>
+
+                            <h4>
+                                Higher Secondary Details
+                            </h4>
+
+                        </div>
+
+                        <span class="academic-icon">
+                            12
+                        </span>
+
+                    </div>
+
+
+                    <div class="academic-grid">
+
+                        {% for field in academic_form %}
+
+                            {% if field.name == 'twelfth_percentage' or field.name == 'twelfth_collage' or field.name == 'twelfth_board' or field.name == 'twelfth_passing_year' %}
+
+                                <div class="form-group">
+
+                                    <label for="{{ field.id_for_label }}">
+
+                                        {{ field.label }}
+
+                                        {% if field.field.required %}
+                                            <span>*</span>
+                                        {% endif %}
+
+                                    </label>
+
+                                    {{ field }}
+
+                                    {% for error in field.errors %}
+
+                                        <div class="field-error">
+                                            {{ error }}
+                                        </div>
+
+                                    {% endfor %}
+
+                                </div>
+
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+
+
+               <div class="admission-actions">
+
+    <a href="{% url 'student_dashboard' %}"
+       class="back-button">
+        ← Back to Dashboard
+    </a>
+
+    <button type="submit"
+            class="submit-button">
+        Submit Application →
+    </button>
+
+</div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

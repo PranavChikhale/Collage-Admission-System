@@ -1,0 +1,830 @@
+/* =================================
+   STUDENT PROFILE
+================================= */
+
+.profile-section {
+    background: #fff7f0;
+    padding: 65px 20px 85px;
+    min-height: 650px;
+}
+
+.profile-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* =================================
+   PROFILE HEADER
+================================= */
+
+.profile-header {
+    background: linear-gradient(135deg, #f36f21, #d9570e);
+    border-radius: 18px;
+    padding: 38px 42px;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 12px 30px rgba(217, 87, 14, 0.18);
+}
+
+.profile-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 9px;
+}
+
+.profile-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+.profile-header p {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile-description {
+    display: block;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+}
+
+
+/* =================================
+   PROFILE CARD
+================================= */
+
+.profile-card {
+    background: #fff;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 18px;
+
+    padding: 38px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =================================
+   FORM HEADING
+================================= */
+
+.form-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    border-bottom: 1px solid #f1dfd0;
+
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+}
+
+.form-heading h2 {
+    margin: 0 0 5px;
+
+    font-size: 23px;
+    color: #292929;
+}
+
+.form-heading p {
+    margin: 0;
+
+    color: #777;
+    font-size: 14px;
+}
+
+.required-note {
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* =================================
+   FORM GRID
+================================= */
+
+.profile-form {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 23px 25px;
+}
+
+.profile-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form-group label {
+    color: #292929;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.profile-form-group label span {
+    color: #f36f21;
+}
+
+.profile-form-group input,
+.profile-form-group select,
+.profile-form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    padding: 12px 13px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    color: #292929;
+
+    background: #fff;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+.profile-form-group input:focus,
+.profile-form-group select:focus,
+.profile-form-group textarea:focus {
+    border-color: #f36f21;
+
+    box-shadow: 0 0 0 3px rgba(243, 111, 33, 0.10);
+}
+
+.profile-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.profile-form-group small {
+    color: #999;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+
+/* =================================
+   ERRORS
+================================= */
+
+.field-error {
+    color: #d9570e;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* =================================
+   FORM ACTIONS
+================================= */
+
+.profile-actions {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-top: 1px solid #f1dfd0;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+}
+
+.back-button {
+    text-decoration: none;
+
+    color: #555;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    color: #f36f21;
+}
+
+.save-button {
+    border: none;
+
+    background: #f36f21;
+
+    color: #fff;
+
+    padding: 13px 27px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.save-button:hover {
+    background: #d9570e;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(217, 87, 14, 0.2);
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 700px) {
+
+    .profile-section {
+        padding: 40px 15px 60px;
+    }
+
+    .profile-header {
+        padding: 30px 25px;
+    }
+
+    .profile-header h1 {
+        font-size: 26px;
+    }
+
+    .profile-icon {
+        display: none;
+    }
+
+    .profile-card {
+        padding: 25px 20px;
+    }
+
+    .profile-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-heading {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-actions {
+        flex-direction: column-reverse;
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .save-button {
+        width: 100%;
+    }
+
+    .back-button {
+        text-align: center;
+    }
+
+}
+
+/* =========================================
+   STUDENT PROFILE
+   SMOOTH PROFESSIONAL ANIMATIONS
+   ========================================= */
+
+
+/* =========================================
+   PROFILE PAGE ENTRY
+   ========================================= */
+
+.profile-section,
+.profile-container,
+.profile-page {
+    animation: profilePageIn 0.7s ease-out both;
+}
+
+@keyframes profilePageIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   PROFILE HEADER
+   ========================================= */
+
+.profile-header {
+    animation: profileHeaderIn 0.7s ease-out both;
+}
+
+@keyframes profileHeaderIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   PROFILE CARD
+   ========================================= */
+
+.profile-card {
+    animation: profileCardIn 0.7s ease-out 0.15s both;
+}
+
+@keyframes profileCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   PROFILE AVATAR
+   ========================================= */
+
+.profile-avatar,
+.profile-image {
+    animation: profileAvatarIn 0.7s ease-out 0.25s both;
+}
+
+@keyframes profileAvatarIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Avatar hover */
+
+.profile-avatar img,
+.profile-image img {
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.profile-avatar:hover img,
+.profile-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   PROFILE NAME
+   ========================================= */
+
+.profile-name {
+    animation: profileNameIn 0.6s ease-out 0.3s both;
+}
+
+@keyframes profileNameIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   PROFILE INFORMATION
+   ========================================= */
+
+.profile-info,
+.profile-details {
+    animation: profileInfoIn 0.65s ease-out 0.25s both;
+}
+
+@keyframes profileInfoIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   FORM SECTIONS
+   ========================================= */
+
+.profile-form,
+.profile-form-section {
+    animation: profileFormIn 0.7s ease-out 0.2s both;
+}
+
+@keyframes profileFormIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   FORM FIELDS
+   ========================================= */
+
+.profile-form .form-group {
+    opacity: 0;
+    animation: profileFieldIn 0.5s ease-out forwards;
+}
+
+.profile-form .form-group:nth-child(1) {
+    animation-delay: 0.10s;
+}
+
+.profile-form .form-group:nth-child(2) {
+    animation-delay: 0.17s;
+}
+
+.profile-form .form-group:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.profile-form .form-group:nth-child(4) {
+    animation-delay: 0.31s;
+}
+
+.profile-form .form-group:nth-child(5) {
+    animation-delay: 0.38s;
+}
+
+.profile-form .form-group:nth-child(6) {
+    animation-delay: 0.45s;
+}
+
+.profile-form .form-group:nth-child(7) {
+    animation-delay: 0.52s;
+}
+
+.profile-form .form-group:nth-child(8) {
+    animation-delay: 0.59s;
+}
+
+.profile-form .form-group:nth-child(9) {
+    animation-delay: 0.66s;
+}
+
+@keyframes profileFieldIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+.profile-form input,
+.profile-form select,
+.profile-form textarea {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease,
+        background 0.25s ease;
+}
+
+.profile-form input:hover,
+.profile-form select:hover,
+.profile-form textarea:hover {
+    border-color: #f36f21;
+}
+
+.profile-form input:focus,
+.profile-form select:focus,
+.profile-form textarea:focus {
+    outline: none;
+
+    border-color: #f36f21;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 3px rgba(243, 111, 33, 0.12),
+        0 5px 15px rgba(60, 35, 20, 0.06);
+}
+
+
+/* =========================================
+   LABELS
+   ========================================= */
+
+.profile-form label {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.profile-form .form-group:focus-within label {
+    color: #d9570e;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================
+   SAVE BUTTON
+   ========================================= */
+
+.profile-form button[type="submit"],
+.profile-save-button,
+.save-profile-button {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.profile-form button[type="submit"]:hover,
+.profile-save-button:hover,
+.save-profile-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(217, 87, 14, 0.22);
+}
+
+
+/* Button shine */
+
+.profile-form button[type="submit"]::after,
+.profile-save-button::after,
+.save-profile-button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.5s ease;
+}
+
+.profile-form button[type="submit"]:hover::after,
+.profile-save-button:hover::after,
+.save-profile-button:hover::after {
+    left: 140%;
+}
+
+
+/* =========================================
+   BACK / DASHBOARD BUTTON
+   ========================================= */
+
+.profile-back,
+.back-dashboard {
+    animation: profileBackIn 0.6s ease-out 0.55s both;
+}
+
+@keyframes profileBackIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-back a,
+.back-dashboard a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.profile-back a:hover,
+.back-dashboard a:hover {
+    color: #f36f21;
+
+    transform: translateX(-3px);
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+   ========================================= */
+
+.profile-form .errorlist,
+.profile-error,
+.profile-alert {
+    animation: profileErrorIn 0.5s ease-out both;
+}
+
+@keyframes profileErrorIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    70% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+   ========================================= */
+
+.profile-success,
+.profile-message,
+.alert-success {
+    animation: profileSuccessIn 0.6s ease-out both;
+}
+
+@keyframes profileSuccessIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   PROFILE INFORMATION ITEMS
+   ========================================= */
+
+.profile-info-item,
+.profile-detail-item {
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.profile-info-item:hover,
+.profile-detail-item:hover {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .profile-card,
+    .profile-form {
+        animation-duration: 0.55s;
+    }
+
+    .profile-form .form-group {
+        animation-duration: 0.45s;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .profile-section,
+    .profile-container,
+    .profile-page,
+    .profile-header,
+    .profile-card,
+    .profile-avatar,
+    .profile-image,
+    .profile-name,
+    .profile-info,
+    .profile-details,
+    .profile-form,
+    .profile-form-section,
+    .profile-form .form-group,
+    .profile-back,
+    .back-dashboard,
+    .profile-form .errorlist,
+    .profile-error,
+    .profile-alert,
+    .profile-success,
+    .profile-message {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

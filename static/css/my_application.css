@@ -1,0 +1,998 @@
+/* =========================================
+   MY APPLICATION PAGE
+========================================= */
+
+.my-application-section {
+    padding: 50px 20px 70px;
+    background: #fff7f0;
+    min-height: calc(100vh - 150px);
+}
+
+.my-application-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.application-header {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px 35px;
+    margin-bottom: 25px;
+    border-left: 6px solid #f36f21;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.application-header-text {
+    flex: 1;
+}
+
+.application-tag {
+    display: inline-block;
+    background: #fff0e5;
+    color: #d9570e;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.application-header h1 {
+    margin: 0;
+    color: #292929;
+    font-size: 32px;
+}
+
+.application-header p {
+    margin: 8px 0 0;
+    color: #777;
+    font-size: 15px;
+}
+
+/* =========================================
+   APPLICATION NUMBER
+========================================= */
+
+.application-number-box {
+    background: #fff7f0;
+    border: 1px solid #ffd7bd;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: right;
+}
+
+.application-number-box span {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.application-number-box strong {
+    color: #d9570e;
+    font-size: 18px;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.application-status {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* =========================================
+   COMMON CARD
+========================================= */
+
+.application-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.application-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.application-card-title .icon {
+    width: 42px;
+    height: 42px;
+    background: #fff0e5;
+    color: #f36f21;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.application-card-title h2 {
+    margin: 0;
+    color: #292929;
+    font-size: 21px;
+}
+
+.application-card-title p {
+    margin: 3px 0 0;
+    color: #888;
+    font-size: 13px;
+}
+
+/* =========================================
+   INFORMATION GRID
+========================================= */
+
+.application-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.application-info-item {
+    background: #fffaf6;
+    border: 1px solid #f3e1d5;
+    border-radius: 12px;
+    padding: 17px 18px;
+}
+
+.application-info-item span {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.application-info-item strong {
+    display: block;
+    color: #333;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+/* =========================================
+   COURSE HIGHLIGHT
+========================================= */
+
+.course-highlight {
+    background: linear-gradient(135deg, #f36f21, #d9570e);
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.course-highlight span {
+    display: block;
+    font-size: 12px;
+    opacity: 0.85;
+    margin-bottom: 7px;
+}
+
+.course-highlight h3 {
+    margin: 0 0 7px;
+    font-size: 23px;
+}
+
+.course-highlight p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* =========================================
+   ACADEMIC SECTION
+========================================= */
+
+.academic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.academic-box {
+    border: 1px solid #f0ddd0;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.academic-box-header {
+    background: #fff3e8;
+    padding: 15px 18px;
+    color: #d9570e;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.academic-box-content {
+    padding: 18px;
+}
+
+.academic-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.academic-item:last-child {
+    border-bottom: none;
+}
+
+.academic-item span {
+    color: #777;
+    font-size: 13px;
+}
+
+.academic-item strong {
+    color: #333;
+    font-size: 13px;
+    text-align: right;
+}
+
+/* =========================================
+   DOCUMENT SECTION
+========================================= */
+
+.documents-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.document-status {
+    padding: 18px;
+    border-radius: 12px;
+    background: #fffaf6;
+    border: 1px solid #f1ded1;
+    text-align: center;
+}
+
+.document-status .document-icon {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.document-status strong {
+    display: block;
+    color: #333;
+    font-size: 14px;
+}
+
+.document-status span {
+    display: block;
+    margin-top: 5px;
+    color: #28a745;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.application-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #eeeeee;
+}
+
+.back-button,
+.pdf-button,
+.documents-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+    border-radius: 9px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.back-button {
+    background: #f1f1f1;
+    color: #555;
+}
+
+.back-button:hover {
+    background: #e4e4e4;
+    color: #292929;
+}
+
+.pdf-button {
+    background: #f36f21;
+    color: #ffffff;
+}
+
+.pdf-button:hover {
+    background: #d9570e;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(243, 111, 33, 0.25);
+}
+
+.documents-button {
+    background: #fff0e5;
+    color: #d9570e;
+    border: 1px solid #ffd2b5;
+}
+
+.documents-button:hover {
+    background: #f36f21;
+    color: #ffffff;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 850px) {
+
+    .application-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .application-number-box {
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .academic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .documents-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+
+    .my-application-section {
+        padding: 30px 15px 50px;
+    }
+
+    .application-header {
+        padding: 25px 20px;
+    }
+
+    .application-header h1 {
+        font-size: 26px;
+    }
+
+    .application-card {
+        padding: 22px 18px;
+    }
+
+    .application-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .documents-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .application-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .back-button,
+    .pdf-button,
+    .documents-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* =========================================
+   PRINT / PDF STYLE
+========================================= */
+
+@media print {
+
+    body {
+        background: #ffffff !important;
+    }
+
+    .application-header,
+    .application-card {
+        box-shadow: none !important;
+    }
+
+    .application-actions,
+    nav,
+    footer {
+        display: none !important;
+    }
+
+    .my-application-section {
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .my-application-container {
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   MY APPLICATION PAGE
+   SMOOTH PROFESSIONAL ANIMATIONS
+   ========================================= */
+
+
+/* =========================================
+   PAGE ENTRY
+   ========================================= */
+
+.my-application-section,
+.my-application-container,
+.my-application-page {
+    animation: myApplicationPageIn 0.7s ease-out both;
+}
+
+@keyframes myApplicationPageIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.my-application-header,
+.application-header {
+    animation: myApplicationHeaderIn 0.7s ease-out both;
+}
+
+@keyframes myApplicationHeaderIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.my-application-header h1,
+.application-header h1 {
+    animation: myApplicationTitleIn 0.6s ease-out 0.15s both;
+}
+
+@keyframes myApplicationTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   APPLICATION MAIN CARD
+   ========================================= */
+
+.my-application-card,
+.application-detail-card,
+.application-main-card {
+    animation: applicationMainCardIn 0.7s ease-out 0.15s both;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+@keyframes applicationMainCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.my-application-card:hover,
+.application-detail-card:hover {
+    box-shadow:
+        0 15px 35px rgba(60, 35, 20, 0.10);
+}
+
+
+/* =========================================
+   APPLICATION NUMBER
+   ========================================= */
+
+.application-number {
+    animation: applicationNumberIn 0.6s ease-out 0.3s both;
+}
+
+@keyframes applicationNumberIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.application-status,
+.my-application-status,
+.status-badge {
+    animation: myApplicationStatusIn 0.6s ease-out 0.35s both;
+}
+
+@keyframes myApplicationStatusIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.application-status:hover,
+.my-application-status:hover,
+.status-badge:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   INFORMATION SECTIONS
+   ========================================= */
+
+.application-section,
+.application-info-section,
+.academic-section,
+.document-section {
+    opacity: 0;
+
+    animation:
+        applicationSectionIn
+        0.6s
+        ease-out
+        forwards;
+}
+
+.application-section:nth-child(1),
+.application-info-section:nth-child(1) {
+    animation-delay: 0.20s;
+}
+
+.application-section:nth-child(2),
+.application-info-section:nth-child(2),
+.academic-section {
+    animation-delay: 0.30s;
+}
+
+.application-section:nth-child(3),
+.application-info-section:nth-child(3),
+.document-section {
+    animation-delay: 0.40s;
+}
+
+@keyframes applicationSectionIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   INFORMATION ITEMS
+   ========================================= */
+
+.application-info-item,
+.detail-item,
+.info-item {
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.application-info-item:hover,
+.detail-item:hover,
+.info-item:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 16px rgba(60, 35, 20, 0.07);
+}
+
+
+/* =========================================
+   COURSE INFORMATION
+   ========================================= */
+
+.course-details,
+.application-course,
+.course-info {
+    animation: courseDetailsIn 0.6s ease-out 0.3s both;
+}
+
+@keyframes courseDetailsIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   ACADEMIC DETAILS
+   ========================================= */
+
+.academic-details,
+.academic-info {
+    animation: academicInfoIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes academicInfoIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   DOCUMENT DETAILS
+   ========================================= */
+
+.application-documents,
+.submitted-documents,
+.document-list {
+    animation: documentsIn 0.6s ease-out 0.45s both;
+}
+
+@keyframes documentsIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.application-documents li,
+.submitted-documents li,
+.document-list li {
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.application-documents li:hover,
+.submitted-documents li:hover,
+.document-list li:hover {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   DOCUMENT LINKS
+   ========================================= */
+
+.application-documents a,
+.submitted-documents a,
+.document-list a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.application-documents a:hover,
+.submitted-documents a:hover,
+.document-list a:hover {
+    color: #d9570e;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+   ========================================= */
+
+.application-actions,
+.my-application-actions {
+    animation: applicationActionsIn 0.6s ease-out 0.5s both;
+}
+
+@keyframes applicationActionsIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   DOWNLOAD PDF BUTTON
+   ========================================= */
+
+.pdf-button {
+    position: relative;
+
+    overflow: hidden;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.pdf-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 23px rgba(217, 87, 14, 0.23);
+}
+
+
+/* PDF button shine */
+
+.pdf-button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.28),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.55s ease;
+}
+
+.pdf-button:hover::after {
+    left: 140%;
+}
+
+
+/* =========================================
+   EDIT PROFILE BUTTON
+   ========================================= */
+
+.edit-profile-button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.edit-profile-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(60, 35, 20, 0.12);
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.application-back,
+.my-application-back {
+    animation: applicationBackIn 0.6s ease-out 0.55s both;
+}
+
+@keyframes applicationBackIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.application-back a,
+.my-application-back a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.application-back a:hover,
+.my-application-back a:hover {
+    color: #f36f21;
+
+    transform: translateX(-4px);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .my-application-card,
+    .application-detail-card,
+    .application-main-card {
+        animation-duration: 0.55s;
+    }
+
+    .application-section,
+    .application-info-section,
+    .academic-section,
+    .document-section {
+        animation-duration: 0.5s;
+    }
+
+    .pdf-button,
+    .edit-profile-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .my-application-section,
+    .my-application-container,
+    .my-application-page,
+    .my-application-header,
+    .application-header,
+    .my-application-header h1,
+    .application-header h1,
+    .my-application-card,
+    .application-detail-card,
+    .application-main-card,
+    .application-number,
+    .application-status,
+    .my-application-status,
+    .status-badge,
+    .application-section,
+    .application-info-section,
+    .academic-section,
+    .document-section,
+    .course-details,
+    .application-course,
+    .course-info,
+    .academic-details,
+    .academic-info,
+    .application-documents,
+    .submitted-documents,
+    .document-list,
+    .application-actions,
+    .my-application-actions,
+    .application-back,
+    .my-application-back {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

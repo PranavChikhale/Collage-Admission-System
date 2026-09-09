@@ -4,6 +4,23 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import RegistrationForm, LoginForm
+from course.models import Course
+from admission.models import AdmissionApplication
+
+
+def home(request):
+    courses = Course.objects.filter(
+        is_active=True,
+        available_seats__gt=0
+    )[:4]
+
+    return render(
+        request,
+        'account/home.html',
+        {
+            'courses': courses
+        }
+    )
 
 def login_view(request):
     if request.method == 'POST':
@@ -124,7 +141,17 @@ def register_view(request):
 
 @login_required
 def STUDENT_DASHBOARD(request):
-    return render(request, 'students/student_dashboard.html')
+    application_count = AdmissionApplication.objects.filter(
+        student=request.user
+    ).count()
+
+    return render(
+        request,
+        'students/student_dashboard.html',
+        {
+            'application_count': application_count
+        }
+    )
 
 @login_required
 def ADMIN_DASHBORAD(request):

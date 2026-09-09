@@ -1,100 +1,293 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <title>Registration</title>
-</head>
+{% block title %}
+Register | College Admission Management System
+{% endblock %}
 
-<body>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
 
-    <h1>College Admission System</h1>
+{% block content %}
 
-    <h2>Create Account</h2>
+<section class="auth-section">
 
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
+    <div class="auth-container">
 
-    <form method="POST">
+        <!-- LEFT IMAGE -->
+        <div class="auth-image">
 
-        {% csrf_token %}
+            <img src="{% static 'images/campus-life.jpg' %}"
+                 alt="College Campus Life">
 
-        <label>First Name</label>
-        <input
-            type="text"
-            name="first_name"
-            required
-        >
+            <div class="auth-image-overlay">
 
-        <br><br>
+                <span class="auth-image-badge">
+                    🎓 JOIN US TODAY
+                </span>
 
-        <label>Last Name</label>
-        <input
-            type="text"
-            name="last_name"
-            required
-        >
+                <h2>
+                    Start Your
+                    <span>Journey</span>
+                </h2>
 
-        <br><br>
+                <p>
+                    Create your account and take the
+                    first step towards a brighter future.
+                </p>
 
-        <label>Username</label>
-        <input
-            type="text"
-            name="username"
-            required
-        >
+                <div class="auth-points">
 
-        <br><br>
+                    <span>✓ Simple Online Registration</span>
 
-        <label>Email</label>
-        <input
-            type="email"
-            name="email"
-            required
-        >
+                    <span>✓ Secure Admission Process</span>
 
-        <br><br>
+                    <span>✓ Easy Application Tracking</span>
 
-        <label>Password</label>
-        <input
-            type="password"
-            name="password"
-            required
-        >
+                    <span>✓ Student Friendly Platform</span>
 
-        <br><br>
+                </div>
 
-        <label>Confirm Password</label>
-        <input
-            type="password"
-            name="confirm_password"
-            required
-        >
-        <br><br>
-        {{ form.captcha }}
+            </div>
 
-        <br><br>
-
-        <button type="submit">
-            Create Account
-        </button>
-
-    </form>
-
-    <p>
-        Already have an account?
-        <a href="{% url 'login' %}">
-            Login
-        </a>
-    </p>
-    <p>
-        Cancel & GO to Home Page...!
-        <a href="{% url 'home' %}">
-            Home
-        </a>
-    </p>
+        </div>
 
 
-</body>
+        <!-- RIGHT FORM -->
+        <div class="auth-form register-form">
 
-</html>
+            <!-- LOGO -->
+            <div class="auth-logo">
+
+                <img src="{% static 'images/logo.png' %}"
+                     alt="College Logo">
+
+            </div>
+
+
+            <h1>
+                Create Account
+            </h1>
+
+            <p class="auth-subtitle">
+                Register to begin your admission journey
+            </p>
+
+
+            <!-- ERROR -->
+            {% if error %}
+
+                <div class="auth-error">
+                    ⚠ {{ error }}
+                </div>
+
+            {% endif %}
+
+
+            <!-- FORM -->
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- FIRST + LAST NAME -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="id_first_name">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="id_first_name"
+                            name="first_name"
+                            placeholder="Enter first name"
+                            value="{{ form.first_name.value|default:'' }}"
+                            required
+                        >
+
+                        {% if form.first_name.errors %}
+                            <div class="field-error">
+                                {{ form.first_name.errors.0 }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="id_last_name">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="id_last_name"
+                            name="last_name"
+                            placeholder="Enter last name"
+                            value="{{ form.last_name.value|default:'' }}"
+                            required
+                        >
+
+                        {% if form.last_name.errors %}
+                            <div class="field-error">
+                                {{ form.last_name.errors.0 }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="id_username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="id_username"
+                        name="username"
+                        placeholder="Choose a username"
+                        value="{{ form.username.value|default:'' }}"
+                        required
+                    >
+
+                    {% if form.username.errors %}
+                        <div class="field-error">
+                            {{ form.username.errors.0 }}
+                        </div>
+                    {% endif %}
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="id_email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="id_email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        value="{{ form.email.value|default:'' }}"
+                        required
+                    >
+
+                    {% if form.email.errors %}
+                        <div class="field-error">
+                            {{ form.email.errors.0 }}
+                        </div>
+                    {% endif %}
+
+                </div>
+
+
+                <!-- PASSWORD ROW -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="id_password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="id_password"
+                            name="password"
+                            placeholder="Create password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="id_confirm_password">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="id_confirm_password"
+                            name="confirm_password"
+                            placeholder="Confirm password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAPTCHA -->
+
+                <div class="captcha-container">
+
+                    <label>
+                        Security Verification
+                    </label>
+
+                    {{ form.captcha }}
+
+                    {% if form.captcha.errors %}
+
+                        <div class="field-error">
+                            {{ form.captcha.errors.0 }}
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="auth-button">
+
+                    Create Account
+                    <span>→</span>
+
+                </button>
+
+            </form>
+
+
+            <!-- LOGIN -->
+
+            <div class="auth-register">
+
+                Already have an account?
+
+                <a href="{% url 'login' %}">
+                    Login Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

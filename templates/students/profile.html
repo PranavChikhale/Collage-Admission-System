@@ -1,35 +1,130 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
+{% block title %}
+Student Profile | College Admission Management System
+{% endblock %}
 
-    <title>Student Profile</title>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
 
-</head>
+{% block content %}
 
-<body>
-    <h2> Hello {{user.username}}</h2>
+<section class="profile-section">
 
-    <h1>Complete Your Profile</h1>
+    <div class="profile-container">
 
-    <form method="POST">
+        <!-- Profile Header -->
+        <div class="profile-header">
 
-        {% csrf_token %}
+            <div class="profile-header-content">
 
-        {{ form.as_p }}
+                <span class="profile-tag">
+                    STUDENT PROFILE
+                </span>
 
-        <button type="submit">
-            Save Profile
-        </button>
+                <h1>
+                    Complete Your Profile
+                </h1>
 
-    </form>
+                <p>
+                    Hello, {{ user.first_name|default:user.username }} 👋
+                </p>
 
-    <br>
+                <span class="profile-description">
+                    Keep your personal information updated for the admission process.
+                </span>
 
-    <a href="{% url 'student_dashboard' %}">
-        Back to Dashboard
-    </a>
+            </div>
 
-</body>
+            <div class="profile-icon">
+                👤
+            </div>
 
-</html>
+        </div>
+
+
+        <!-- Profile Form -->
+        <div class="profile-card">
+
+            <div class="form-heading">
+
+                <div>
+                    <h2>Personal Information</h2>
+
+                    <p>
+                        Please provide your correct details.
+                    </p>
+                </div>
+
+                <span class="required-note">
+                    * Required fields
+                </span>
+
+            </div>
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="profile-form">
+
+                    {% for field in form %}
+
+                        <div class="profile-form-group">
+
+                            <label for="{{ field.id_for_label }}">
+                                {{ field.label }}
+
+                                {% if field.field.required %}
+                                    <span>*</span>
+                                {% endif %}
+                            </label>
+
+                            {{ field }}
+
+                            {% if field.help_text %}
+                                <small>
+                                    {{ field.help_text }}
+                                </small>
+                            {% endif %}
+
+                            {% for error in field.errors %}
+                                <div class="field-error">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="profile-actions">
+
+                    <a href="{% url 'student_dashboard' %}"
+                       class="back-button">
+                        ← Back to Dashboard
+                    </a>
+
+                    <button type="submit"
+                            class="save-button">
+                        Save Profile →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,64 +1,142 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
+{% block title %}Courses | College Admission Management System{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/courses.css' %}">
+{% endblock %}
 
-    <title>Available Courses</title>
+{% block content %}
 
-</head>
+<!-- PAGE HERO -->
+<section class="inner-page-hero">
+    <div class="container">
+        <span>EXPLORE PROGRAMS</span>
+        <h1>Our Courses</h1>
+        <p>Discover the right program to build your future.</p>
+    </div>
+</section>
 
-<body>
 
-    <h1>Available Courses</h1>
+<!-- COURSES -->
+<section class="course-page-section">
+    <div class="container">
 
-    {% if courses %}
+        <div class="section-heading">
+            <span>ACADEMIC PROGRAMS</span>
+            <h2>Choose Your Course</h2>
+            <p>
+                Explore our available programs and select the course
+                that matches your career goals.
+            </p>
+        </div>
 
-        {% for course in courses %}
+        {% if courses %}
 
-            <div>
+        <div class="course-page-grid">
 
-                <h2>
-                    {{ course.course_name }}
-                </h2>
+            {% for course in courses %}
 
-                <p>
-                    Course Code:
-                    {{ course.course_code }}
-                </p>
+            <div class="course-page-card">
 
-                <p>
-                    Department:
-                    {{ course.department }}
-                </p>
+                <div class="course-page-image">
 
-                <p>
-                    Duration:
-                    {{ course.duration }} Years
-                </p>
+                    {% if forloop.counter == 1 %}
+                        <img src="{% static 'images/campus-building.jpg' %}"
+                             alt="{{ course.course_name }}">
+                    {% elif forloop.counter == 2 %}
+                        <img src="{% static 'images/library.jpg' %}"
+                             alt="{{ course.course_name }}">
+                    {% elif forloop.counter == 3 %}
+                        <img src="{% static 'images/students.jpg' %}"
+                             alt="{{ course.course_name }}">
+                    {% else %}
+                        <img src="{% static 'images/future.jpg' %}"
+                             alt="{{ course.course_name }}">
+                    {% endif %}
 
-                <p>
-                    Available Seats:
-                    {{ course.available_seats }}
-                </p>
+                    <span class="course-page-code">
+                        {{ course.course_code }}
+                    </span>
+                </div>
+
+
+                <div class="course-page-content">
+
+                    <span class="course-page-department">
+                        {{ course.department }}
+                    </span>
+
+                    <h3>{{ course.course_name }}</h3>
+
+                    <p>
+                        {{ course.description|default:"Build your knowledge and skills with this academic program." }}
+                    </p>
+
+
+                    <div class="course-page-info">
+
+                        <div>
+                            <small>Duration</small>
+                            <strong>{{ course.duration }} Years</strong>
+                        </div>
+
+                        <div>
+                            <small>Available Seats</small>
+                            <strong>{{ course.available_seats }}</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="course-page-footer">
+
+                        <span class="seat-status">
+                            ● Seats Available
+                        </span>
+
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'admission_form' %}">
+                                Apply Now →
+                            </a>
+                        {% else %}
+                            <a href="{% url 'register' %}">
+                                Apply Now →
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <hr>
+            {% endfor %}
 
-        {% endfor %}
+        </div>
 
-    {% else %}
+        {% else %}
 
-        <p>
-            No courses are currently available.
-        </p>
+        <div class="course-empty">
 
-    {% endif %}
+            <div class="course-empty-icon">🎓</div>
 
-    <a href="{% url 'home' %}">
-        Back to Home
-    </a>
+            <h3>No Courses Available</h3>
 
-</body>
+            <p>
+                Course information will be available shortly.
+                Please check again later.
+            </p>
 
-</html>
+            <a href="{% url 'home' %}" class="primary-button">
+                Back to Home
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+</section>
+
+{% endblock %}

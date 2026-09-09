@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+My Applications | College Admission Management System
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{% static 'css/view_applications.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="applications-section">
+
+    <div class="applications-container">
+
+        <!-- PAGE HEADER -->
+
+        <div class="applications-header">
+
+            <div>
+
+                <span class="applications-tag">
+                    STUDENT PORTAL
+                </span>
+
+                <h1>
+                    My Applications
+                </h1>
+
+                <p>
+                    View all your submitted admission applications
+                    and their current status.
+                </p>
+
+            </div>
+
+            <div class="applications-header-icon">
+                📋
+            </div>
+
+        </div>
+
+
+        <!-- APPLICATIONS -->
+
+        {% if applications %}
+
+            <div class="applications-list">
+
+                {% for application in applications %}
+
+                    <div class="application-small-card">
+
+                        <!-- CARD TOP -->
+
+                        <div class="application-card-top">
+
+                            <div>
+
+                                <span class="application-label">
+                                    APPLICATION
+                                </span>
+
+                                <h2>
+                                    {{ application.course.course_name }}
+                                </h2>
+
+                            </div>
+
+
+                            <!-- STATUS -->
+
+                            <div>
+
+                                {% if application.status == 'Pending' %}
+
+                                    <span class="status-badge status-pending">
+                                        Pending
+                                    </span>
+
+                                {% elif application.status == 'Approved' %}
+
+                                    <span class="status-badge status-approved">
+                                        Approved
+                                    </span>
+
+                                {% elif application.status == 'Rejected' %}
+
+                                    <span class="status-badge status-rejected">
+                                        Rejected
+                                    </span>
+
+                                {% else %}
+
+                                    <span class="status-badge">
+                                        {{ application.status }}
+                                    </span>
+
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CARD INFORMATION -->
+
+                        <div class="application-card-info">
+
+                            <div class="application-info-item">
+
+                                <span>
+                                    Application Number
+                                </span>
+
+                                <strong>
+                                    {{ application.application_number }}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="application-info-item">
+
+                                <span>
+                                    Course Code
+                                </span>
+
+                                <strong>
+                                    {{ application.course.course_code }}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="application-info-item">
+
+                                <span>
+                                    Department
+                                </span>
+
+                                <strong>
+                                    {{ application.course.department }}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="application-info-item">
+
+                                <span>
+                                    Applied On
+                                </span>
+
+                                <strong>
+                                    {{ application.application_date|date:"d M Y" }}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CARD BOTTOM -->
+
+                        <div class="application-card-bottom">
+
+                            <div class="application-status-text">
+
+                                {% if application.status == 'Pending' %}
+
+                                    <span>
+                                        Your application is under review.
+                                    </span>
+
+                                {% elif application.status == 'Approved' %}
+
+                                    <span>
+                                        🎉 Your application has been approved.
+                                    </span>
+
+                                {% elif application.status == 'Rejected' %}
+
+                                    <span>
+                                        Your application has been rejected.
+                                    </span>
+
+                                {% endif %}
+
+                            </div>
+
+
+                            <a
+                                href="{% url 'my_application' application.application_number %}"
+                                class="my-application-button"
+                            >
+                                My Application →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <!-- NO APPLICATION -->
+
+            <div class="no-applications">
+
+                <div class="no-application-icon">
+                    📝
+                </div>
+
+                <h2>
+                    No Applications Found
+                </h2>
+
+                <p>
+                    You have not submitted any admission application yet.
+                </p>
+
+                <a
+                    href="{% url 'admission_form' %}"
+                    class="apply-button"
+                >
+                    Apply for Admission →
+                </a>
+
+            </div>
+
+        {% endif %}
+
+
+        <!-- BACK -->
+
+        <div class="applications-back">
+
+            <a href="{% url 'student_dashboard' %}">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,1066 @@
+/* ==========================================
+   DOCUMENT UPLOAD PAGE
+========================================== */
+
+.documents-section {
+    background: #fff7f0;
+    padding: 55px 20px 80px;
+    min-height: 700px;
+}
+
+.documents-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.documents-image-wrapper {
+    width: 100%;
+    height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+}
+
+.documents-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   MAIN CARD
+========================================== */
+
+.documents-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================
+   INTRO
+========================================== */
+
+.documents-intro {
+    text-align: center;
+
+    padding-bottom: 28px;
+
+    margin-bottom: 28px;
+
+    border-bottom: 1px solid #f1dfd0;
+}
+
+.documents-tag {
+    display: inline-block;
+
+    color: #f36f21;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.documents-intro h1 {
+    margin: 0 0 8px;
+
+    color: #292929;
+
+    font-size: 28px;
+}
+
+.documents-intro p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   APPLICATION INFORMATION
+========================================== */
+
+.application-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 32px;
+}
+
+.application-info > div {
+    min-width: 0;
+
+    background: #fff7f0;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 10px;
+
+    padding: 16px 18px;
+
+    box-sizing: border-box;
+}
+
+.application-info span {
+    display: block;
+
+    color: #999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 6px;
+}
+
+.application-info strong {
+    display: block;
+
+    color: #292929;
+
+    font-size: 14px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   DOCUMENT GRID
+========================================== */
+
+.document-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px 24px;
+}
+
+
+/* ==========================================
+   DOCUMENT FIELD
+========================================== */
+
+.document-field {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.document-field label {
+    color: #292929;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.document-field label span {
+    color: #f36f21;
+
+    margin-left: 2px;
+}
+
+
+/* ==========================================
+   FILE BOX
+========================================== */
+
+.file-input-wrapper {
+    width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    background: #fffaf6;
+
+    border: 1px dashed #e5b895;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    transition: all 0.25s ease;
+}
+
+.file-input-wrapper:hover {
+    border-color: #f36f21;
+
+    background: #fff7f0;
+}
+
+
+/* ==========================================
+   FILE INPUT
+========================================== */
+
+.file-input-wrapper input[type="file"] {
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    color: #777;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.file-input-wrapper input[type="file"]::file-selector-button {
+    border: none;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    padding: 9px 15px;
+
+    margin-right: 10px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.file-input-wrapper input[type="file"]::file-selector-button:hover {
+    background: #d9570e;
+}
+
+
+/* ==========================================
+   UPLOAD NOTE
+========================================== */
+
+.upload-note {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    background: #fff7f0;
+
+    border: 1px solid #f1dfd0;
+
+    border-radius: 10px;
+
+    padding: 16px 18px;
+
+    margin-top: 30px;
+}
+
+.note-icon {
+    width: 25px;
+    height: 25px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.upload-note strong {
+    display: block;
+
+    color: #292929;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.upload-note p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.documents-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid #f1dfd0;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+}
+
+.back-button {
+    color: #666;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.back-button:hover {
+    color: #f36f21;
+}
+
+.upload-button {
+    border: none;
+
+    background: #f36f21;
+
+    color: #ffffff;
+
+    padding: 13px 27px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.upload-button:hover {
+    background: #d9570e;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(217, 87, 14, 0.20);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 800px) {
+
+    .documents-section {
+        padding: 45px 18px 65px;
+    }
+
+    .documents-image-wrapper {
+        height: 330px;
+    }
+
+    .documents-card {
+        padding: 30px;
+    }
+
+    .document-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .documents-section {
+        padding: 30px 15px 55px;
+    }
+
+    .documents-image-wrapper {
+        height: 250px;
+
+        border-radius: 14px;
+    }
+
+    .documents-card {
+        padding: 25px 20px;
+
+        border-radius: 14px;
+    }
+
+    .documents-intro h1 {
+        font-size: 23px;
+    }
+
+    .application-info {
+        grid-template-columns: 1fr;
+    }
+
+    .document-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .documents-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .upload-button {
+        width: 100%;
+    }
+
+    .back-button {
+        text-align: center;
+    }
+
+}
+
+/* =========================================
+   DOCUMENT UPLOAD PAGE
+   SMOOTH PROFESSIONAL ANIMATIONS
+   ========================================= */
+
+
+/* =========================================
+   PAGE ENTRY
+   ========================================= */
+
+.documents-section,
+.documents-container,
+.documents-page {
+    animation: documentsPageIn 0.7s ease-out both;
+}
+
+@keyframes documentsPageIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.documents-header,
+.documents-hero {
+    animation: documentsHeaderIn 0.7s ease-out both;
+}
+
+@keyframes documentsHeaderIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.documents-header h1,
+.documents-hero h1 {
+    animation: documentsTitleIn 0.6s ease-out 0.15s both;
+}
+
+@keyframes documentsTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.documents-header p,
+.documents-hero p {
+    animation: documentsTextIn 0.6s ease-out 0.25s both;
+}
+
+@keyframes documentsTextIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   APPLICATION INFORMATION
+   ========================================= */
+
+.document-application-info,
+.application-info {
+    animation: documentInfoIn 0.6s ease-out 0.15s both;
+}
+
+@keyframes documentInfoIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   UPLOAD CARD
+   ========================================= */
+
+.documents-card,
+.document-upload-card,
+.upload-card {
+    animation: uploadCardIn 0.7s ease-out 0.2s both;
+}
+
+@keyframes uploadCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   DOCUMENT ITEMS
+   ========================================= */
+
+.document-item,
+.document-field,
+.upload-item {
+    opacity: 0;
+
+    animation:
+        documentItemIn
+        0.55s
+        ease-out
+        forwards;
+}
+
+.document-item:nth-child(1),
+.document-field:nth-child(1),
+.upload-item:nth-child(1) {
+    animation-delay: 0.10s;
+}
+
+.document-item:nth-child(2),
+.document-field:nth-child(2),
+.upload-item:nth-child(2) {
+    animation-delay: 0.18s;
+}
+
+.document-item:nth-child(3),
+.document-field:nth-child(3),
+.upload-item:nth-child(3) {
+    animation-delay: 0.26s;
+}
+
+.document-item:nth-child(4),
+.document-field:nth-child(4),
+.upload-item:nth-child(4) {
+    animation-delay: 0.34s;
+}
+
+.document-item:nth-child(5),
+.document-field:nth-child(5),
+.upload-item:nth-child(5) {
+    animation-delay: 0.42s;
+}
+
+.document-item:nth-child(6),
+.document-field:nth-child(6),
+.upload-item:nth-child(6) {
+    animation-delay: 0.50s;
+}
+
+@keyframes documentItemIn {
+    from {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   DOCUMENT ITEM HOVER
+   ========================================= */
+
+.document-item,
+.document-field,
+.upload-item {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.document-item:hover,
+.document-field:hover,
+.upload-item:hover {
+    transform: translateY(-3px);
+
+    border-color: #f36f21;
+
+    box-shadow:
+        0 8px 20px rgba(60, 35, 20, 0.08);
+}
+
+
+/* =========================================
+   DOCUMENT ICON
+   ========================================= */
+
+.document-icon,
+.upload-icon,
+.file-icon {
+    transition:
+        transform 0.35s ease;
+}
+
+.document-item:hover .document-icon,
+.document-field:hover .upload-icon,
+.upload-item:hover .file-icon {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+
+/* =========================================
+   FILE INPUT
+   ========================================= */
+
+.documents-form input[type="file"],
+.document-upload-form input[type="file"],
+.upload-form input[type="file"] {
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+.documents-form input[type="file"]:hover,
+.document-upload-form input[type="file"]:hover,
+.upload-form input[type="file"]:hover {
+    border-color: #f36f21;
+
+    background: #fffaf6;
+}
+
+.documents-form input[type="file"]:focus,
+.document-upload-form input[type="file"]:focus,
+.upload-form input[type="file"]:focus {
+    outline: none;
+
+    border-color: #f36f21;
+
+    box-shadow:
+        0 0 0 3px rgba(243, 111, 33, 0.12);
+}
+
+
+/* =========================================
+   FILE LABEL
+   ========================================= */
+
+.document-item label,
+.document-field label,
+.upload-item label {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.document-item:focus-within label,
+.document-field:focus-within label,
+.upload-item:focus-within label {
+    color: #d9570e;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================
+   IMAGE PREVIEW
+   ========================================= */
+
+.document-preview,
+.file-preview,
+.image-preview {
+    overflow: hidden;
+
+    animation: previewIn 0.5s ease-out both;
+}
+
+@keyframes previewIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.document-preview img,
+.file-preview img,
+.image-preview img {
+    transition:
+        transform 0.5s ease;
+}
+
+.document-preview:hover img,
+.file-preview:hover img,
+.image-preview:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   UPLOAD BUTTON
+   ========================================= */
+
+.documents-form button[type="submit"],
+.document-upload-form button[type="submit"],
+.upload-form button[type="submit"],
+.upload-button,
+.submit-upload {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.documents-form button[type="submit"]:hover,
+.document-upload-form button[type="submit"]:hover,
+.upload-form button[type="submit"]:hover,
+.upload-button:hover,
+.submit-upload:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 23px rgba(217, 87, 14, 0.22);
+}
+
+
+/* =========================================
+   UPLOAD BUTTON SHINE
+   ========================================= */
+
+.documents-form button[type="submit"]::after,
+.document-upload-form button[type="submit"]::after,
+.upload-form button[type="submit"]::after,
+.upload-button::after,
+.submit-upload::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.28),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.55s ease;
+}
+
+.documents-form button[type="submit"]:hover::after,
+.document-upload-form button[type="submit"]:hover::after,
+.upload-form button[type="submit"]:hover::after,
+.upload-button:hover::after,
+.submit-upload:hover::after {
+    left: 140%;
+}
+
+
+/* =========================================
+   SUCCESS STATE
+   ========================================= */
+
+.document-success,
+.upload-success,
+.documents-success {
+    animation: uploadSuccessIn 0.6s ease-out both;
+}
+
+@keyframes uploadSuccessIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* =========================================
+   ERROR STATE
+   ========================================= */
+
+.document-error,
+.upload-error,
+.documents-error,
+.documents-form .errorlist {
+    animation: uploadErrorIn 0.5s ease-out both;
+}
+
+@keyframes uploadErrorIn {
+
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.documents-back,
+.upload-back {
+    animation: documentsBackIn 0.6s ease-out 0.5s both;
+}
+
+@keyframes documentsBackIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.documents-back a,
+.upload-back a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.documents-back a:hover,
+.upload-back a:hover {
+    color: #f36f21;
+
+    transform: translateX(-4px);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .documents-card,
+    .document-upload-card,
+    .upload-card {
+        animation-duration: 0.55s;
+    }
+
+    .document-item,
+    .document-field,
+    .upload-item {
+        animation-duration: 0.45s;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .documents-section,
+    .documents-container,
+    .documents-page,
+    .documents-header,
+    .documents-hero,
+    .documents-header h1,
+    .documents-hero h1,
+    .documents-header p,
+    .documents-hero p,
+    .document-application-info,
+    .application-info,
+    .documents-card,
+    .document-upload-card,
+    .upload-card,
+    .document-item,
+    .document-field,
+    .upload-item,
+    .document-preview,
+    .file-preview,
+    .image-preview,
+    .document-success,
+    .upload-success,
+    .documents-success,
+    .document-error,
+    .upload-error,
+    .documents-error,
+    .documents-form .errorlist,
+    .documents-back,
+    .upload-back {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

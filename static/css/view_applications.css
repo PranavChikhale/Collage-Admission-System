@@ -1,0 +1,775 @@
+/* =========================================
+   MY APPLICATIONS PAGE
+   ========================================= */
+
+.applications-section {
+    min-height: calc(100vh - 180px);
+    padding: 60px 20px 70px;
+    background: #fff7f0;
+}
+
+.applications-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.applications-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 38px 42px;
+    margin-bottom: 35px;
+
+    background: linear-gradient(
+        135deg,
+        #f36f21,
+        #d9570e
+    );
+
+    border-radius: 18px;
+    color: #ffffff;
+
+    box-shadow: 0 12px 30px rgba(217, 87, 14, 0.20);
+}
+
+.applications-tag {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: #fff3e8;
+}
+
+.applications-header h1 {
+    margin: 0 0 10px;
+
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.applications-header p {
+    margin: 0;
+
+    max-width: 650px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #fff4eb;
+}
+
+.applications-header-icon {
+    width: 90px;
+    height: 90px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.16);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+
+    font-size: 42px;
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================================
+   APPLICATION LIST
+   ========================================= */
+
+.applications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+/* =========================================
+   APPLICATION CARD
+   ========================================= */
+
+.application-small-card {
+    background: #ffffff;
+
+    border: 1px solid #f0ddd0;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(60, 35, 20, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.application-small-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #f36f21;
+
+    box-shadow: 0 15px 35px rgba(217, 87, 14, 0.14);
+}
+
+
+/* =========================================
+   CARD TOP
+   ========================================= */
+
+.application-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 28px;
+
+    background: #fffaf6;
+
+    border-bottom: 1px solid #f2e1d6;
+}
+
+.application-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #f36f21;
+}
+
+.application-card-top h2 {
+    margin: 0;
+
+    color: #292929;
+
+    font-size: 23px;
+    font-weight: 750;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================
+   STATUS BADGES
+   ========================================= */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 90px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* Pending */
+
+.status-pending {
+    color: #9a6700;
+    background: #fff3cd;
+    border: 1px solid #ffe69c;
+}
+
+
+/* Approved */
+
+.status-approved {
+    color: #146c43;
+    background: #d1e7dd;
+    border: 1px solid #a3cfbb;
+}
+
+
+/* Rejected */
+
+.status-rejected {
+    color: #b02a37;
+    background: #f8d7da;
+    border: 1px solid #f1aeb5;
+}
+
+
+/* =========================================
+   CARD INFORMATION
+   ========================================= */
+
+.application-card-info {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 25px 28px;
+
+    gap: 20px;
+}
+
+.application-info-item {
+    min-width: 0;
+}
+
+.application-info-item span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    color: #8a817b;
+}
+
+.application-info-item strong {
+    display: block;
+
+    color: #292929;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   CARD BOTTOM
+   ========================================= */
+
+.application-card-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 28px;
+
+    background: #fffaf6;
+
+    border-top: 1px solid #f2e1d6;
+}
+
+.application-status-text {
+    color: #665b54;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.application-status-text span {
+    display: inline-block;
+}
+
+
+/* =========================================
+   MY APPLICATION BUTTON
+   ========================================= */
+
+.my-application-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 20px;
+
+    flex-shrink: 0;
+
+    background: #f36f21;
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.my-application-button:hover {
+    background: #d9570e;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(217, 87, 14, 0.22);
+}
+
+
+/* =========================================
+   NO APPLICATIONS
+   ========================================= */
+
+.no-applications {
+    padding: 65px 30px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #f0ddd0;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(60, 35, 20, 0.07);
+}
+
+.no-application-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0e4;
+
+    border-radius: 50%;
+
+    font-size: 36px;
+}
+
+.no-applications h2 {
+    margin: 0 0 10px;
+
+    color: #292929;
+
+    font-size: 25px;
+}
+
+.no-applications p {
+    margin: 0 auto 25px;
+
+    max-width: 500px;
+
+    color: #716860;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   APPLY BUTTON
+   ========================================= */
+
+.apply-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 23px;
+
+    background: #f36f21;
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.apply-button:hover {
+    background: #d9570e;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(217, 87, 14, 0.22);
+}
+
+
+/* =========================================
+   BACK TO DASHBOARD
+   ========================================= */
+
+.applications-back {
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+.applications-back a {
+    display: inline-flex;
+    align-items: center;
+
+    color: #d9570e;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+.applications-back a:hover {
+    color: #f36f21;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .applications-section {
+        padding: 45px 18px 60px;
+    }
+
+    .applications-header {
+        padding: 32px;
+    }
+
+    .applications-header h1 {
+        font-size: 32px;
+    }
+
+    .application-card-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .applications-section {
+        padding: 30px 14px 45px;
+    }
+
+    .applications-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 28px 22px;
+
+        border-radius: 14px;
+    }
+
+    .applications-header h1 {
+        font-size: 28px;
+    }
+
+    .applications-header p {
+        font-size: 14px;
+    }
+
+    .applications-header-icon {
+        width: 65px;
+        height: 65px;
+
+        border-radius: 15px;
+
+        font-size: 30px;
+    }
+
+    .application-card-top {
+        flex-direction: column;
+
+        padding: 22px 20px;
+    }
+
+    .application-card-top h2 {
+        font-size: 20px;
+    }
+
+    .application-card-info {
+        grid-template-columns: 1fr;
+
+        padding: 22px 20px;
+
+        gap: 17px;
+    }
+
+    .application-card-bottom {
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 18px 20px;
+    }
+
+    .application-status-text {
+        font-size: 13px;
+    }
+
+    .my-application-button {
+        width: 100%;
+    }
+
+    .no-applications {
+        padding: 50px 20px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .applications-header h1 {
+        font-size: 25px;
+    }
+
+    .application-card-top h2 {
+        font-size: 18px;
+    }
+
+    .status-badge {
+        font-size: 12px;
+    }
+
+    .application-info-item strong {
+        font-size: 13px;
+    }
+}
+/* =========================================
+   SMOOTH PAGE ANIMATIONS
+   ========================================= */
+
+.applications-header {
+    animation: applicationsHeaderIn 0.7s ease-out both;
+}
+
+@keyframes applicationsHeaderIn {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   APPLICATION CARD ENTRY
+   ========================================= */
+
+.application-small-card {
+    opacity: 0;
+    animation: applicationCardIn 0.6s ease-out forwards;
+}
+
+
+/* Stagger cards */
+
+.application-small-card:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.application-small-card:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.application-small-card:nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+.application-small-card:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.application-small-card:nth-child(5) {
+    animation-delay: 0.55s;
+}
+
+.application-small-card:nth-child(6) {
+    animation-delay: 0.65s;
+}
+
+@keyframes applicationCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   CARD HOVER
+   ========================================= */
+
+.application-small-card:hover {
+    transform: translateY(-5px) scale(1.005);
+}
+
+
+/* =========================================
+   STATUS BADGE
+   ========================================= */
+
+.status-badge {
+    animation: badgeAppear 0.5s ease-out 0.4s both;
+}
+
+@keyframes badgeAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.my-application-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.my-application-button::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.5s ease;
+}
+
+.my-application-button:hover::after {
+    left: 130%;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.applications-back {
+    animation: backButtonIn 0.6s ease-out 0.5s both;
+}
+
+@keyframes backButtonIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   EMPTY STATE
+   ========================================= */
+
+.no-applications {
+    animation: emptyStateIn 0.7s ease-out both;
+}
+
+@keyframes emptyStateIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.no-application-icon {
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}

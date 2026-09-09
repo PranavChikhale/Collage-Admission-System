@@ -1,28 +1,943 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>College Admission</title>
-</head>
+{% extends 'base.html' %}
+{% load static %}
 
-<body>
+{% block title %}
+College Admission Management System | Home
+{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
-    <h1>Welcome to Our College</h1>
+{% block content %}
 
-    <p>College Admission Portal</p>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-    <a href="{% url 'login' %}">
-        <button>Login</button>
-    </a>
+<section class="hero-section">
 
-    <a href="{% url 'register' %}">
-        <button>Create Account</button>
+    <div class="hero-overlay"></div>
 
-    </a>
+    <div class="container hero-container">
 
-    <br><br>
-    <a href="{% url 'course_list' %}">
-        <button> See Courses</button>
-    </a>
+        <div class="hero-text">
 
-</body>
-</html>
+            <div class="hero-eyebrow">
+                <span></span>
+                ADMISSIONS OPEN 2026–27
+            </div>
+
+            <h1>
+                Your Future
+                <br>
+                <span>Starts Here.</span>
+            </h1>
+
+            <p>
+                Discover quality education, inspiring opportunities
+                and a campus designed to help you learn, grow and
+                achieve your goals.
+            </p>
+
+            <div class="hero-buttons">
+
+                {% if user.is_authenticated %}
+
+                    <a href="{% url 'admission_form' %}"
+                       class="primary-button">
+                        Start Application
+                        <span>→</span>
+                    </a>
+
+                {% else %}
+
+                    <a href="{% url 'register' %}"
+                       class="primary-button">
+                        Start Application
+                        <span>→</span>
+                    </a>
+
+                {% endif %}
+
+                <a href="{% url 'course_list' %}"
+                   class="hero-outline-button">
+                    Explore Programs
+                </a>
+
+            </div>
+
+            <div class="hero-trust">
+
+                <div class="trust-avatars">
+                    <span>🎓</span>
+                    <span>👨‍🎓</span>
+                    <span>👩‍🎓</span>
+                </div>
+
+                <div>
+                    <strong>10,000+ Students</strong>
+                    <small>Building successful careers</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-side-card">
+
+            <div class="hero-card-top">
+                <span>ADMISSION 2026–27</span>
+                <div class="live-dot"></div>
+            </div>
+
+            <h3>
+                Applications
+                <br>
+                are now open.
+            </h3>
+
+            <p>
+                Apply online from anywhere and complete your
+                admission process in a few simple steps.
+            </p>
+
+            <div class="hero-card-line"></div>
+
+            <div class="hero-card-info">
+
+                <div>
+                    <strong>30 June</strong>
+                    <small>Application Deadline</small>
+                </div>
+
+                <div>
+                    <strong>Online</strong>
+                    <small>Application Mode</small>
+                </div>
+
+            </div>
+
+            <a href="{% url 'course_list' %}">
+                View Available Programs →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <div class="container hero-bottom-inner">
+
+            <span>TRUSTED EDUCATION</span>
+
+            <div></div>
+
+            <span>MODERN CAMPUS</span>
+
+            <div></div>
+
+            <span>CAREER FOCUSED</span>
+
+            <div></div>
+
+            <span>STUDENT CENTRIC</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="stat-item">
+            <div class="stat-icon">🎓</div>
+            <div>
+                <strong>25+</strong>
+                <span>Years of Excellence</span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">👨‍🎓</div>
+            <div>
+                <strong>10K+</strong>
+                <span>Students</span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">📚</div>
+            <div>
+                <strong>30+</strong>
+                <span>Academic Programs</span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon">🏆</div>
+            <div>
+                <strong>95%</strong>
+                <span>Placement Success</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro-section">
+
+    <div class="container intro-grid">
+
+        <div class="intro-image">
+
+            <img src="{% static 'images/campus-building.jpg' %}"
+                 alt="College Campus">
+
+            <div class="intro-experience">
+                <strong>25+</strong>
+                <span>Years of<br>Excellence</span>
+            </div>
+
+        </div>
+
+
+        <div class="intro-content">
+
+            <span class="section-tag">
+                WELCOME TO OUR COLLEGE
+            </span>
+
+            <h2>
+                Education That
+                <span>Builds Tomorrow.</span>
+            </h2>
+
+            <p>
+                We believe education is more than classrooms and
+                examinations. It is about developing knowledge,
+                confidence, creativity and the skills needed to
+                succeed in a changing world.
+            </p>
+
+            <p>
+                Our college provides a supportive learning
+                environment, experienced faculty and opportunities
+                that help students turn their ambitions into reality.
+            </p>
+
+            <div class="intro-points">
+
+                <div>
+                    <span>✓</span>
+                    Experienced Faculty
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Modern Learning Facilities
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Career & Placement Support
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Student Development Programs
+                </div>
+
+            </div>
+
+            <a href="{% url 'course_list' %}"
+               class="dark-button">
+                Explore Our Programs →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY CHOOSE US
+===================================================== -->
+
+<section class="features-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>WHY CHOOSE US</span>
+
+            <h2>
+                Everything You Need
+                <br>
+                To Begin Your Journey
+            </h2>
+
+            <p>
+                From online registration to application tracking,
+                everything is designed to make your admission journey
+                simple and convenient.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+
+                <span class="feature-number">01</span>
+
+                <div class="feature-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Simple Application
+                </h3>
+
+                <p>
+                    Fill out your admission application online
+                    without unnecessary paperwork.
+                </p>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'admission_form' %}">
+                        Start Application →
+                    </a>
+                {% else %}
+                    <a href="{% url 'register' %}">
+                        Get Started →
+                    </a>
+                {% endif %}
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span class="feature-number">02</span>
+
+                <div class="feature-icon">
+                    📄
+                </div>
+
+                <h3>
+                    Secure Documents
+                </h3>
+
+                <p>
+                    Upload photographs, certificates and academic
+                    documents securely through the portal.
+                </p>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'documents_upload' %}">
+                        Upload Documents →
+                    </a>
+                {% else %}
+                    <a href="{% url 'register' %}">
+                        Register Now →
+                    </a>
+                {% endif %}
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span class="feature-number">03</span>
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Track Application
+                </h3>
+
+                <p>
+                    Stay updated with your application status
+                    from your student dashboard.
+                </p>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'student_dashboard' %}">
+                        View Dashboard →
+                    </a>
+                {% else %}
+                    <a href="{% url 'login' %}">
+                        Student Login →
+                    </a>
+                {% endif %}
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span class="feature-number">04</span>
+
+                <div class="feature-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Career Focused
+                </h3>
+
+                <p>
+                    Choose programs designed to build practical
+                    knowledge and career-ready skills.
+                </p>
+
+                <a href="{% url 'course_list' %}">
+                    Explore Programs →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMISSION PROCESS
+===================================================== -->
+
+<section class="process-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>HOW IT WORKS</span>
+
+            <h2>
+                Your Admission Journey
+            </h2>
+
+            <p>
+                Four simple steps from registration to application tracking.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-card">
+
+                <div class="process-number">01</div>
+
+                <div class="process-icon">
+                    👤
+                </div>
+
+                <h3>Create Account</h3>
+
+                <p>
+                    Register as a student and create your
+                    secure account.
+                </p>
+
+                <span class="process-arrow">→</span>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">02</div>
+
+                <div class="process-icon">
+                    📝
+                </div>
+
+                <h3>Apply Online</h3>
+
+                <p>
+                    Select your preferred course and complete
+                    your academic details.
+                </p>
+
+                <span class="process-arrow">→</span>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">03</div>
+
+                <div class="process-icon">
+                    📂
+                </div>
+
+                <h3>Upload Documents</h3>
+
+                <p>
+                    Submit the required documents securely
+                    through your application.
+                </p>
+
+                <span class="process-arrow">→</span>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">04</div>
+
+                <div class="process-icon">
+                    🎯
+                </div>
+
+                <h3>Track Your Status</h3>
+
+                <p>
+                    Follow your application and admission
+                    status online.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COURSES
+===================================================== -->
+
+<section class="courses-section">
+
+    <div class="container">
+
+        <div class="courses-heading-row">
+
+            <div class="section-heading left-heading">
+
+                <span>ACADEMIC PROGRAMS</span>
+
+                <h2>
+                    Find Your
+                    <span>Right Program.</span>
+                </h2>
+
+                <p>
+                    Explore our popular programs and choose the
+                    path that matches your interests and career goals.
+                </p>
+
+            </div>
+
+            <a href="{% url 'course_list' %}"
+               class="outline-button">
+                View All Courses →
+            </a>
+
+        </div>
+
+
+        {% if courses %}
+
+        <div class="home-course-grid">
+
+            {% for course in courses %}
+
+            <article class="home-course-card">
+
+                <div class="home-course-image">
+
+                    {% if forloop.counter == 1 %}
+
+                        <img src="{% static 'images/campus-building.jpg' %}"
+                             alt="{{ course.course_name }}">
+
+                    {% elif forloop.counter == 2 %}
+
+                        <img src="{% static 'images/library.jpg' %}"
+                             alt="{{ course.course_name }}">
+
+                    {% elif forloop.counter == 3 %}
+
+                        <img src="{% static 'images/students.jpg' %}"
+                             alt="{{ course.course_name }}">
+
+                    {% else %}
+
+                        <img src="{% static 'images/future.jpg' %}"
+                             alt="{{ course.course_name }}">
+
+                    {% endif %}
+
+
+                    <div class="course-image-overlay"></div>
+
+                    <span class="course-code">
+                        {{ course.course_code }}
+                    </span>
+
+                    <span class="course-status">
+                        ● Admissions Open
+                    </span>
+
+                </div>
+
+
+                <div class="home-course-content">
+
+                    <span class="course-department">
+                        {{ course.department }}
+                    </span>
+
+                    <h3>
+                        {{ course.course_name }}
+                    </h3>
+
+                    <p>
+                        {{ course.description|default:"Develop knowledge, practical skills and a strong foundation for your future career."|truncatewords:20 }}
+                    </p>
+
+
+                    <div class="course-meta">
+
+                        <div>
+                            <span>Duration</span>
+                            <strong>
+                                {{ course.duration }} Years
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Seats Left</span>
+                            <strong>
+                                {{ course.available_seats }}
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="course-card-bottom">
+
+                        <a href="{% url 'course_list' %}"
+                           class="course-details">
+                            Course Details
+                            <span>→</span>
+                        </a>
+
+
+                        {% if user.is_authenticated %}
+
+                            <a href="{% url 'admission_form' %}"
+                               class="course-apply">
+                                Apply Now
+                            </a>
+
+                        {% else %}
+
+                            <a href="{% url 'register' %}"
+                               class="course-apply">
+                                Apply Now
+                            </a>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="no-courses">
+
+            <div class="empty-icon">
+                🎓
+            </div>
+
+            <h3>
+                Programs Coming Soon
+            </h3>
+
+            <p>
+                Our academic programs will be available shortly.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTICE
+===================================================== -->
+
+<section class="notice-section">
+
+    <div class="container">
+
+        <div class="notice-wrapper">
+
+            <div class="notice-content">
+
+                <div class="notice-label">
+                    <span></span>
+                    ADMISSION UPDATE
+                </div>
+
+                <h2>
+                    Applications Open
+                    <span>for 2026–27</span>
+                </h2>
+
+                <p>
+                    Take the first step towards your future.
+                    Complete your application online and secure
+                    your preferred academic program.
+                </p>
+
+
+                <div class="notice-highlights">
+
+                    <div class="notice-item">
+                        <strong>01</strong>
+                        <span>Register Online</span>
+                    </div>
+
+                    <div class="notice-item">
+                        <strong>02</strong>
+                        <span>Select Course</span>
+                    </div>
+
+                    <div class="notice-item">
+                        <strong>03</strong>
+                        <span>Submit Documents</span>
+                    </div>
+
+                </div>
+
+
+                {% if user.is_authenticated %}
+
+                    <a href="{% url 'admission_form' %}"
+                       class="primary-button">
+                        Apply Now →
+                    </a>
+
+                {% else %}
+
+                    <a href="{% url 'register' %}"
+                       class="primary-button">
+                        Register & Apply →
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="notice-date-card">
+
+                <div class="date-circle">
+                    <span>LAST DATE</span>
+                    <strong>30</strong>
+                    <small>JUNE</small>
+                </div>
+
+                <div>
+                    <span class="date-year">
+                        2027
+                    </span>
+
+                    <p>
+                        Application Deadline
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CAMPUS LIFE
+===================================================== -->
+
+<section class="campus-section">
+
+    <div class="container campus-grid">
+
+        <div class="campus-content">
+
+            <span class="section-tag">
+                LIFE ON CAMPUS
+            </span>
+
+            <h2>
+                More Than
+                <span>A Classroom.</span>
+            </h2>
+
+            <p>
+                College life is about discovering new interests,
+                building meaningful relationships and preparing
+                yourself for the world beyond graduation.
+            </p>
+
+            <div class="campus-points">
+
+                <div>
+                    <span>✓</span>
+                    <p>Modern classrooms & laboratories</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Well-equipped library facilities</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Student clubs & activities</p>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <p>Career guidance & placement support</p>
+                </div>
+
+            </div>
+
+            <a href="{% url 'course_list' %}"
+               class="dark-button">
+                Discover Programs →
+            </a>
+
+        </div>
+
+
+        <div class="campus-image">
+
+            <img src="{% static 'images/campus-life.jpg' %}"
+                 alt="Student Campus Life">
+
+            <div class="campus-image-card">
+
+                <strong>10K+</strong>
+
+                <span>
+                    Students building
+                    <br>
+                    their future
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta-overlay"></div>
+
+    <div class="container cta-content">
+
+        <span>
+            TAKE THE FIRST STEP
+        </span>
+
+        <h2>
+            Your Future Is
+            <br>
+            Worth Investing In.
+        </h2>
+
+        <p>
+            Start your admission journey today and discover
+            where your ambition can take you.
+        </p>
+
+        <div class="cta-buttons">
+
+            {% if user.is_authenticated %}
+
+                <a href="{% url 'admission_form' %}"
+                   class="primary-button">
+                    Start My Application →
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'register' %}"
+                   class="primary-button">
+                    Create Student Account →
+                </a>
+
+                <a href="{% url 'login' %}"
+                   class="cta-white-button">
+                    Already Registered? Login
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
